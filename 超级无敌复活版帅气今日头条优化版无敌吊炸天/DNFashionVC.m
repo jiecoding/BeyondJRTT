@@ -1,43 +1,25 @@
 //
-//  DNHomeViewController.m
+//  DNFashionVC.m
 //  超级无敌复活版帅气今日头条优化版无敌吊炸天
 //
 //  Created by rongtong on 16/2/17.
 //  Copyright © 2016年 iosqun328218600. All rights reserved.
 //
 
-#import "DNHomeViewController.h"
-#import "DNHorizontalSelectController.h"
-#import "DNRecommendVC.h"
 #import "DNFashionVC.h"
-@interface DNHomeViewController ()
+
+@interface DNFashionVC ()
 
 @end
 
-@implementation DNHomeViewController
+@implementation DNFashionVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor orangeColor];
-    //推荐视图控制器
-    DNRecommendVC *recommentVC = [[DNRecommendVC alloc] init];
-    recommentVC.title = @"推荐";
     
-    DNHorizontalSelectController *horizontalController = [[DNHorizontalSelectController alloc] init];
-    
-    DNFashionVC *fashionVC = [[DNFashionVC alloc] init];
-    
-    
-    
-    horizontalController.subViewControllers =@[recommentVC,fashionVC];
-    
-    [horizontalController addParentController:self];
-    
-    
+    self.view.backgroundColor = [UIColor purpleColor];
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

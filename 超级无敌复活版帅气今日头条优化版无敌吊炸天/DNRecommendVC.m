@@ -17,7 +17,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor purpleColor];
+    
+    UITableView *_tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height)];
+    _tableview.delegate =self;
+    _tableview.dataSource= self;
+    [self.view addSubview:_tableview];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //使用static会将字符串放到静态区，程序运行过程中，只会初始化一次，作为cell的重用标识一般使用static修饰，确保能是cell进行重用
+    
+    static NSString *cellIdentifier  = @"cellIdentifier";
+    UITableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if(!cell)
+    {
+        cell = [[UITableViewCell alloc] init];
+        
+        
+    }
+    
+    return cell;
+    
 }
 
 - (void)didReceiveMemoryWarning {
