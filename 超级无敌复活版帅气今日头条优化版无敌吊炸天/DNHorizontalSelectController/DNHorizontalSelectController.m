@@ -25,7 +25,7 @@
     [self.navigationController.navigationBar addSubview:_navTabbarView];
     
     
-    _mainView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _navTabbarView.frame.origin.y + _navTabbarView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
+    _mainView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     
     _mainView.backgroundColor = [UIColor yellowColor];
     
@@ -39,6 +39,8 @@
     [_mainView addSubview:tuijianVC.view];
     
     [self addChildViewController:tuijianVC];
+    
+    
 }
 
 - (void)addParentController:(UIViewController *)viewController

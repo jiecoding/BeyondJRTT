@@ -13,9 +13,34 @@
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
 */
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if(self = [super initWithFrame:frame])
+    {
+        [self addView];
+    }
+    return self;
+}
+- (void)addView
+{
+    _tabbarScrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    
+    _tabbarScrollview.backgroundColor = [UIColor darkGrayColor];
+    
+    _tabbarScrollview.showsHorizontalScrollIndicator=  YES;
+    
+    _tabbarScrollview.contentSize = CGSizeMake(self.frame.size.width *2, self.frame.size.height);
+    
+    [self addSubview:_tabbarScrollview];
+    
+    UIButton *tuijianButton  = [UIButton buttonWithType:UIButtonTypeCustom];
+    tuijianButton.frame = CGRectMake(10, 0, 44, 44);
+    [tuijianButton setTitle:@"推荐" forState:UIControlStateNormal];
+    
+    [self addSubview:tuijianButton];
+    
+}
+
  
 @end
