@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B93A351F1C74206700D68613 /* DNHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B93A351E1C74206700D68613 /* DNHomeViewController.m */; };
 		B9C9237E1C7410A2005D3FF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C9237D1C7410A2005D3FF4 /* main.m */; };
 		B9C923811C7410A2005D3FF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C923801C7410A2005D3FF4 /* AppDelegate.m */; };
-		B9C923841C7410A2005D3FF4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C923831C7410A2005D3FF4 /* ViewController.m */; };
 		B9C923871C7410A2005D3FF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9C923851C7410A2005D3FF4 /* Main.storyboard */; };
 		B9C923891C7410A2005D3FF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9C923881C7410A2005D3FF4 /* Assets.xcassets */; };
 		B9C9238C1C7410A2005D3FF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9C9238A1C7410A2005D3FF4 /* LaunchScreen.storyboard */; };
@@ -35,12 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B93A351D1C74206700D68613 /* DNHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNHomeViewController.h; sourceTree = "<group>"; };
+		B93A351E1C74206700D68613 /* DNHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNHomeViewController.m; sourceTree = "<group>"; };
 		B9C923791C7410A2005D3FF4 /* 超级无敌复活版帅气今日头条优化版无敌吊炸天.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C9237D1C7410A2005D3FF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9C9237F1C7410A2005D3FF4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B9C923801C7410A2005D3FF4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B9C923821C7410A2005D3FF4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B9C923831C7410A2005D3FF4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B9C923861C7410A2005D3FF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9C923881C7410A2005D3FF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9C9238B1C7410A2005D3FF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 			children = (
 				B9C9237F1C7410A2005D3FF4 /* AppDelegate.h */,
 				B9C923801C7410A2005D3FF4 /* AppDelegate.m */,
-				B9C923821C7410A2005D3FF4 /* ViewController.h */,
-				B9C923831C7410A2005D3FF4 /* ViewController.m */,
+				B93A351D1C74206700D68613 /* DNHomeViewController.h */,
+				B93A351E1C74206700D68613 /* DNHomeViewController.m */,
 				B9C923851C7410A2005D3FF4 /* Main.storyboard */,
 				B9C923881C7410A2005D3FF4 /* Assets.xcassets */,
 				B9C9238A1C7410A2005D3FF4 /* LaunchScreen.storyboard */,
@@ -202,6 +202,7 @@
 		B9C923711C7410A2005D3FF4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = DN;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = iosqun328218600;
 				TargetAttributes = {
@@ -270,9 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9C923841C7410A2005D3FF4 /* ViewController.m in Sources */,
 				B9C923811C7410A2005D3FF4 /* AppDelegate.m in Sources */,
 				B9C9237E1C7410A2005D3FF4 /* main.m in Sources */,
+				B93A351F1C74206700D68613 /* DNHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +499,7 @@
 				B9C923A81C7410A2005D3FF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9C923A91C7410A2005D3FF4 /* Build configuration list for PBXNativeTarget "超级无敌复活版帅气今日头条优化版无敌吊炸天Tests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +508,7 @@
 				B9C923AB1C7410A2005D3FF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9C923AC1C7410A2005D3FF4 /* Build configuration list for PBXNativeTarget "超级无敌复活版帅气今日头条优化版无敌吊炸天UITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +517,7 @@
 				B9C923AE1C7410A2005D3FF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

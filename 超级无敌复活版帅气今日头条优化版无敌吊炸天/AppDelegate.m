@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "DNHomeViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,6 +16,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    UITabBarController *dNTabbarController = [[UITabBarController alloc] init];
+    
+    DNHomeViewController *homeVC = [[DNHomeViewController alloc] init];
+    dNTabbarController.viewControllers = @[homeVC];
+    
+    
+    self.window.rootViewController = dNTabbarController;
+     
     // Override point for customization after application launch.
     return YES;
 }
