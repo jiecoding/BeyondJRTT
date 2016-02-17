@@ -20,9 +20,12 @@
     UITabBarController *dNTabbarController = [[UITabBarController alloc] init];
     
     DNHomeViewController *homeVC = [[DNHomeViewController alloc] init];
-    dNTabbarController.viewControllers = @[homeVC];
+//    homeVC.title = @"首页";
+    UINavigationController *dNNavigationController = [[UINavigationController alloc] init];
+    dNNavigationController.viewControllers = @[homeVC];
     
-    
+    dNTabbarController.viewControllers = @[dNNavigationController];
+   
     self.window.rootViewController = dNTabbarController;
      
     // Override point for customization after application launch.
