@@ -7,18 +7,6 @@
 
 利用addChildViewController方法
 
-PS：在以前，一个UIViewController的View可能有很多小的子view。这些子view很多时候被盖在最后，我们在最外层ViewController的viewDidLoad方法中，用addSubview增加了大量的子view。这些子view大多数不会一直处于界面上，只是在某些情况下才会出现，例如登陆失败的提示view，上传附件成功的提示view，网络失败的提示view等。但是虽然这些view很少出现，但是我们却常常一直把它们放在内存中。另外，当收到内存警告时，我们只能自己手工把这些view从super view中去掉。
-
-改变
-
-苹果新的API增加了addChildViewController方法，并且希望我们在使用addSubview时，同时调用[self addChildViewController:child]方法将sub view对应的viewController也加到当前ViewController的管理中。对于那些当前暂时不需要显示的subview，只通过addChildViewController把subViewController加进去。需要显示时再调用transitionFromViewController:toViewController:duration:options:animations:completion方法。
-
-另外，当收到系统的Memory Warning的时候，系统也会自动把当前没有显示的subview unload掉，以节省内存。
-
-
-
-言归正传 
-
 A视图控制器（HomeViewController)来管理控制 B视图控制器 (DNHorizontalSelectController) ,B视图控制器去管理控制其他的子视图控制器(推荐、热点、北京....) 
 
 B视图控制器 管理的比较多且需要滚动显示，所以在DNHorizontalSelectController加了一层mainscrollview来进行滑动各个视图控制器的视图，并利用scrollview的delegate 里的方法来进行控制协调。
@@ -32,5 +20,14 @@ B视图控制器 管理的比较多且需要滚动显示，所以在DNHorizontal
 
 一股脑的简单的写了个，感觉还行吧，正在继续优化，有什么建议的可以提，多谢
 
+
+
+PS：在以前，一个UIViewController的View可能有很多小的子view。这些子view很多时候被盖在最后，我们在最外层ViewController的viewDidLoad方法中，用addSubview增加了大量的子view。这些子view大多数不会一直处于界面上，只是在某些情况下才会出现，例如登陆失败的提示view，上传附件成功的提示view，网络失败的提示view等。但是虽然这些view很少出现，但是我们却常常一直把它们放在内存中。另外，当收到内存警告时，我们只能自己手工把这些view从super view中去掉。
+
+改变
+
+苹果新的API增加了addChildViewController方法，并且希望我们在使用addSubview时，同时调用[self addChildViewController:child]方法将sub view对应的viewController也加到当前ViewController的管理中。对于那些当前暂时不需要显示的subview，只通过addChildViewController把subViewController加进去。需要显示时再调用transitionFromViewController:toViewController:duration:options:animations:completion方法。
+
+另外，当收到系统的Memory Warning的时候，系统也会自动把当前没有显示的subview unload掉，以节省内存。
 
 
