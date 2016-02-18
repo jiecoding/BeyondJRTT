@@ -21,4 +21,6 @@
 
 @property (nonatomic,weak,nullable) id <NavTabBarViewSelectDelegate>delegate;
 
+@property (nonatomic,strong)NSMutableArray *titles;
+- (void)addTabbarButton;
 @end

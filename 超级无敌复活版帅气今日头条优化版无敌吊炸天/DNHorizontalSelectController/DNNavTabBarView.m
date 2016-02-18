@@ -34,35 +34,29 @@
     
     [self addSubview:_tabbarScrollview];
     
-    UIButton *tuijianButton  = [UIButton buttonWithType:UIButtonTypeCustom];
-    tuijianButton.frame = CGRectMake(10, 0, 44, 44);
-    [tuijianButton setTitle:@"推荐" forState:UIControlStateNormal];
+   
     
-    [self addSubview:tuijianButton];
-    
-    
-    [tuijianButton addTarget:self action:@selector(tuijianVC) forControlEvents:UIControlEventTouchUpInside];
+ }
+- (void)addTabbarButton
+{
+    int buttonX = 10;
+    for (int i = 0; i<_titles.count; i++) {
+        UIButton *tabbarButton  = [UIButton buttonWithType:UIButtonTypeCustom];
+        tabbarButton.frame = CGRectMake(buttonX, 0, 44, 44);
+        [tabbarButton setTitle:_titles[i] forState:UIControlStateNormal];
+        tabbarButton.tag = i + 1000;
+        [tabbarButton addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self addSubview:tabbarButton];
+        buttonX = buttonX+64;
+    }
 
-    
-    UIButton *fashionButton  = [UIButton buttonWithType:UIButtonTypeCustom];
-    fashionButton.frame = CGRectMake(74, 0, 44, 44);
-    fashionButton.backgroundColor = [UIColor blackColor];
-    [fashionButton setTitle:@"热点" forState:UIControlStateNormal];
-    
-    [fashionButton addTarget:self action:@selector(fashionVC) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self addSubview:fashionButton];
-    
-    
 }
 
-- (void)tuijianVC
+- (void)clickButton:(UIButton *)button
 {
-    [self.delegate selectTitle:0];
+    [self.delegate selectTitle:button.tag];
 }
-- (void)fashionVC
-{
-    [self.delegate selectTitle:1];
-}
+
  
 @end

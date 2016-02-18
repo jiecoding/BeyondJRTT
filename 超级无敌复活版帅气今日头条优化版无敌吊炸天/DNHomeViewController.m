@@ -10,6 +10,8 @@
 #import "DNHorizontalSelectController.h"
 #import "DNRecommendVC.h"
 #import "DNFashionVC.h"
+#import "DNBeiJingViewController.h"
+#import "DNVideoViewController.h"
 @interface DNHomeViewController ()
 
 @end
@@ -24,15 +26,26 @@
     DNRecommendVC *recommentVC = [[DNRecommendVC alloc] init];
     recommentVC.title = @"推荐";
     
-    DNHorizontalSelectController *horizontalController = [[DNHorizontalSelectController alloc] init];
-    
+  
     DNFashionVC *fashionVC = [[DNFashionVC alloc] init];
     
+    fashionVC.title = @"热点";
+    
+    DNBeiJingViewController *beijingVC = [[DNBeiJingViewController alloc] init];
+    beijingVC.title = @"北京";
     
     
-    horizontalController.subViewControllers =@[recommentVC,fashionVC];
+    DNVideoViewController *videoVC = [[DNVideoViewController alloc] init];
+    videoVC.title = @"视频";
+    
+    
+    DNHorizontalSelectController *horizontalController = [[DNHorizontalSelectController alloc] init];
+    
+    horizontalController.subViewControllers =@[recommentVC,fashionVC,beijingVC,videoVC];
     
     [horizontalController addParentController:self];
+    
+    
     
     
 }

@@ -23,6 +23,8 @@
     _navTabbarView = [[DNNavTabBarView alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 44)];
     _navTabbarView.backgroundColor = [UIColor blueColor];
     _navTabbarView.delegate  = self;
+    
+    
     [self.navigationController.navigationBar addSubview:_navTabbarView];
     
     
@@ -34,35 +36,32 @@
     _mainScrollView.pagingEnabled  = YES;
     [self.view addSubview:_mainScrollView];
 
-//    UIViewController *tuijianVC =(UIViewController *)_subViewControllers[0];
-//    
-//    tuijianVC.view.frame = CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width, _mainScrollView.frame.size.height);
-//    
-//    [_mainScrollView addSubview:tuijianVC.view];
-//    
-//    [self addChildViewController:tuijianVC];
-//    
-//    DNFashionVC *fashionVC= [[DNFashionVC alloc] init];
-//    fashionVC.view.frame = CGRectMake(self.view.frame.size.width, 0,[UIScreen mainScreen].bounds.size.width, _mainScrollView.frame.size.height);
-//    [_mainScrollView addSubview:fashionVC.view];
-//    [self addChildViewController:fashionVC];
+
     [self subViewControllersManage];
 }
 
 - (void)subViewControllersManage
 {
+    NSMutableArray *mutableTitles = [[NSMutableArray alloc] initWithCapacity:_subViewControllers.count];
+    
      for (int index = 0; index < _subViewControllers.count; index++) {
         UIViewController *viewController = (UIViewController *)_subViewControllers[index];
          viewController.view.frame =CGRectMake(self.view.frame.size.width * index, 0,[UIScreen mainScreen].bounds.size.width, _mainScrollView.frame.size.height);
          [_mainScrollView addSubview:viewController.view];
          [self addChildViewController:viewController];
-    }
+         
+         NSString *titleStr = [_subViewControllers[index] title];
+         [mutableTitles addObject:titleStr];
+     }
     
-    
+   _navTabbarView.titles = mutableTitles;
+ 
+    [_navTabbarView addTabbarButton];
 }
 
 - (void)selectTitle:(int)selectTitleIndex
 {
+    selectTitleIndex = selectTitleIndex%1000;
     _mainScrollView.contentOffset = CGPointMake(self.view.frame.size.width*selectTitleIndex, 0);
 }
 
