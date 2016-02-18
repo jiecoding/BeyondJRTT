@@ -12,6 +12,8 @@
 #import "DNFashionVC.h"
 #import "DNBeiJingViewController.h"
 #import "DNVideoViewController.h"
+#import "DNSocietyViewController.h"
+#import "DNSubscriptionViewController.h"
 @interface DNHomeViewController ()
 
 @end
@@ -38,10 +40,16 @@
     DNVideoViewController *videoVC = [[DNVideoViewController alloc] init];
     videoVC.title = @"视频";
     
+    DNSocietyViewController *societyVC = [[DNSocietyViewController alloc] init];
+    societyVC.title = @"社会";
+    
+    
+    DNSubscriptionViewController *subscriptionVC = [[DNSubscriptionViewController alloc] init];
+    subscriptionVC.title = @"订阅";
     
     DNHorizontalSelectController *horizontalController = [[DNHorizontalSelectController alloc] init];
     
-    horizontalController.subViewControllers =@[recommentVC,fashionVC,beijingVC,videoVC];
+    horizontalController.subViewControllers =@[recommentVC,fashionVC,beijingVC,videoVC,societyVC,subscriptionVC];
     
     [horizontalController addParentController:self];
     

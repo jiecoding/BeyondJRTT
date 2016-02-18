@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B923852F1C759382003EE6B9 /* DNBeiJingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B923852E1C759382003EE6B9 /* DNBeiJingViewController.m */; };
 		B92385321C759593003EE6B9 /* DNVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B92385311C759593003EE6B9 /* DNVideoViewController.m */; };
+		B923853D1C75A15B003EE6B9 /* DNSocietyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B923853C1C75A15B003EE6B9 /* DNSocietyViewController.m */; };
+		B92385401C75A1DC003EE6B9 /* DNSubscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B923853F1C75A1DC003EE6B9 /* DNSubscriptionViewController.m */; };
 		B93A351F1C74206700D68613 /* DNHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B93A351E1C74206700D68613 /* DNHomeViewController.m */; };
 		B93A35241C743CC800D68613 /* DNHorizontalSelectController.m in Sources */ = {isa = PBXBuildFile; fileRef = B93A35231C743CC800D68613 /* DNHorizontalSelectController.m */; };
 		B93A35271C74479700D68613 /* DNNavTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B93A35261C74479700D68613 /* DNNavTabBarView.m */; };
@@ -45,6 +47,10 @@
 		B923852E1C759382003EE6B9 /* DNBeiJingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNBeiJingViewController.m; sourceTree = "<group>"; };
 		B92385301C759593003EE6B9 /* DNVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNVideoViewController.h; sourceTree = "<group>"; };
 		B92385311C759593003EE6B9 /* DNVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNVideoViewController.m; sourceTree = "<group>"; };
+		B923853B1C75A15B003EE6B9 /* DNSocietyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSocietyViewController.h; sourceTree = "<group>"; };
+		B923853C1C75A15B003EE6B9 /* DNSocietyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSocietyViewController.m; sourceTree = "<group>"; };
+		B923853E1C75A1DC003EE6B9 /* DNSubscriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSubscriptionViewController.h; sourceTree = "<group>"; };
+		B923853F1C75A1DC003EE6B9 /* DNSubscriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSubscriptionViewController.m; sourceTree = "<group>"; };
 		B93A351D1C74206700D68613 /* DNHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNHomeViewController.h; sourceTree = "<group>"; };
 		B93A351E1C74206700D68613 /* DNHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNHomeViewController.m; sourceTree = "<group>"; };
 		B93A35221C743CC800D68613 /* DNHorizontalSelectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNHorizontalSelectController.h; sourceTree = "<group>"; };
@@ -143,6 +149,10 @@
 				B923852E1C759382003EE6B9 /* DNBeiJingViewController.m */,
 				B92385301C759593003EE6B9 /* DNVideoViewController.h */,
 				B92385311C759593003EE6B9 /* DNVideoViewController.m */,
+				B923853B1C75A15B003EE6B9 /* DNSocietyViewController.h */,
+				B923853C1C75A15B003EE6B9 /* DNSocietyViewController.m */,
+				B923853E1C75A1DC003EE6B9 /* DNSubscriptionViewController.h */,
+				B923853F1C75A1DC003EE6B9 /* DNSubscriptionViewController.m */,
 				B9C923851C7410A2005D3FF4 /* Main.storyboard */,
 				B9C923881C7410A2005D3FF4 /* Assets.xcassets */,
 				B9C9238A1C7410A2005D3FF4 /* LaunchScreen.storyboard */,
@@ -313,9 +323,11 @@
 				B93A35271C74479700D68613 /* DNNavTabBarView.m in Sources */,
 				B93A352D1C746FBD00D68613 /* DNFashionVC.m in Sources */,
 				B93A35241C743CC800D68613 /* DNHorizontalSelectController.m in Sources */,
+				B92385401C75A1DC003EE6B9 /* DNSubscriptionViewController.m in Sources */,
 				B9C9237E1C7410A2005D3FF4 /* main.m in Sources */,
 				B92385321C759593003EE6B9 /* DNVideoViewController.m in Sources */,
 				B923852F1C759382003EE6B9 /* DNBeiJingViewController.m in Sources */,
+				B923853D1C75A15B003EE6B9 /* DNSocietyViewController.m in Sources */,
 				B93A351F1C74206700D68613 /* DNHomeViewController.m in Sources */,
 				B93A352A1C74538D00D68613 /* DNRecommendVC.m in Sources */,
 			);

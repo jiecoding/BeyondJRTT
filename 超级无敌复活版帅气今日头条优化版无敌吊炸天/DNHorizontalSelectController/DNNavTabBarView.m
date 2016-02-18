@@ -18,15 +18,16 @@
 {
     if(self = [super initWithFrame:frame])
     {
+        _selectIndex = 0;
         [self addView];
     }
     return self;
 }
 - (void)addView
 {
-    _tabbarScrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    _tabbarScrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width - 34, self.frame.size.height)];
     
-    _tabbarScrollview.backgroundColor = [UIColor darkGrayColor];
+//    _tabbarScrollview.backgroundColor = [UIColor darkGrayColor];
     
     _tabbarScrollview.showsHorizontalScrollIndicator=  YES;
     
@@ -47,16 +48,38 @@
         tabbarButton.tag = i + 1000;
         [tabbarButton addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
         
-        [self addSubview:tabbarButton];
-        buttonX = buttonX+64;
+        [_tabbarScrollview addSubview:tabbarButton];
+        buttonX = buttonX+60;
     }
 
 }
 
 - (void)clickButton:(UIButton *)button
 {
+    
+    _previouslySelect =_selectIndex + 1000;
+    
+    UIButton *previouslyButton  = [self viewWithTag:_previouslySelect];
+    
+     previouslyButton.transform =CGAffineTransformMakeScale(1,1);
+    
+    button.transform = CGAffineTransformMakeScale(1.1, 1.1);
+
+    _selectIndex = button.tag %1000;
+    
     [self.delegate selectTitle:button.tag];
+    
+    
+}
+- (void)scrollviewSelectButton{
+    
+    UIButton *previouslyButton  = [self viewWithTag:_previouslySelect+1000];
+    
+    previouslyButton.transform =CGAffineTransformMakeScale(1,1);
+    
+    UIButton *selectButton  = [self viewWithTag:_selectIndex + 1000];
+    selectButton.transform = CGAffineTransformMakeScale(1.1, 1.1);
+
 }
 
- 
 @end

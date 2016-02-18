@@ -20,17 +20,28 @@
 
     self.view.backgroundColor  = [UIColor cyanColor];
     
-    _navTabbarView = [[DNNavTabBarView alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 44)];
-    _navTabbarView.backgroundColor = [UIColor blueColor];
+    _navTabbarView = [[DNNavTabBarView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44)];
+//    _navTabbarView.backgroundColor = [UIColor blueColor];
     _navTabbarView.delegate  = self;
     
+   [self.navigationController.navigationBar addSubview:_navTabbarView];
     
-    [self.navigationController.navigationBar addSubview:_navTabbarView];
+    UIButton *addImageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    addImageButton.frame = CGRectMake(self.view.frame.size.width - 40, 0, 44, 44);
+    [addImageButton setBackgroundImage:[UIImage imageNamed:@"btn_navigation_close"] forState:UIControlStateNormal];
+    [self.navigationController.navigationBar addSubview:addImageButton];
     
     
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:200/255.0f green:40/255.0f blue:47/255.0f alpha:1];
+    
+    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    
+    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+
     _mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    _mainScrollView.delegate = self;
     
-    _mainScrollView.backgroundColor = [UIColor yellowColor];
+//    _mainScrollView.backgroundColor = [UIColor yellowColor];
     _mainScrollView.contentSize = CGSizeMake(self.view.frame.size.width *_subViewControllers.count, self.view.frame.size.height);
     _mainScrollView.showsHorizontalScrollIndicator = NO;
     _mainScrollView.pagingEnabled  = YES;
@@ -38,7 +49,19 @@
 
 
     [self subViewControllersManage];
+    
+     _navTabbarView.previouslySelect =round(_mainScrollView.contentOffset.x / self.view.frame.size.width);
+    
 }
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    _navTabbarView.selectIndex = round(scrollView.contentOffset.x / self.view.frame.size.width);
+    [_navTabbarView scrollviewSelectButton];
+    
+    _navTabbarView.previouslySelect = _navTabbarView.selectIndex;
+}
+
 
 - (void)subViewControllersManage
 {
@@ -59,7 +82,7 @@
     [_navTabbarView addTabbarButton];
 }
 
-- (void)selectTitle:(int)selectTitleIndex
+- (void)selectTitle:(NSInteger)selectTitleIndex
 {
     selectTitleIndex = selectTitleIndex%1000;
     _mainScrollView.contentOffset = CGPointMake(self.view.frame.size.width*selectTitleIndex, 0);

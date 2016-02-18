@@ -17,18 +17,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    UITabBarController *dNTabbarController = [[UITabBarController alloc] init];
     
     DNHomeViewController *homeVC = [[DNHomeViewController alloc] init];
-//    homeVC.title = @"首页";
-    UINavigationController *dNNavigationController = [[UINavigationController alloc] init];
-    dNNavigationController.viewControllers = @[homeVC];
     
-    dNTabbarController.viewControllers = @[dNNavigationController];
+    UITabBarController *dNTabbarController = [[UITabBarController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] init];
+    nav.viewControllers = @[homeVC];
+    dNTabbarController.viewControllers = @[nav];
    
     self.window.rootViewController = dNTabbarController;
      
-    // Override point for customization after application launch.
     return YES;
 }
 

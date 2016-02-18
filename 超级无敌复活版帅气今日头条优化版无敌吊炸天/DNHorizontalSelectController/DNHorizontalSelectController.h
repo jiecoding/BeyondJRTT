@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DNNavTabBarView.h"
-
-@interface DNHorizontalSelectController : UIViewController<NavTabBarViewSelectDelegate>
+@interface DNHorizontalSelectController : UIViewController<NavTabBarViewSelectDelegate,UIScrollViewDelegate>
 
 //B类管理的子控制器
 @property (strong,nonatomic)NSArray *subViewControllers;
