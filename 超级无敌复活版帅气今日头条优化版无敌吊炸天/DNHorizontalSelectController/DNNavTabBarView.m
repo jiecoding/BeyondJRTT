@@ -40,7 +40,29 @@
     
     [self addSubview:tuijianButton];
     
+    
+    [tuijianButton addTarget:self action:@selector(tuijianVC) forControlEvents:UIControlEventTouchUpInside];
+
+    
+    UIButton *fashionButton  = [UIButton buttonWithType:UIButtonTypeCustom];
+    fashionButton.frame = CGRectMake(74, 0, 44, 44);
+    fashionButton.backgroundColor = [UIColor blackColor];
+    [fashionButton setTitle:@"热点" forState:UIControlStateNormal];
+    
+    [fashionButton addTarget:self action:@selector(fashionVC) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self addSubview:fashionButton];
+    
+    
 }
 
+- (void)tuijianVC
+{
+    [self.delegate selectTitle:0];
+}
+- (void)fashionVC
+{
+    [self.delegate selectTitle:1];
+}
  
 @end

@@ -7,9 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol NavTabBarViewSelectDelegate
+
+- (void)selectTitle:(int)selectTitleIndex;
+
+@end
 
 @interface DNNavTabBarView : UIView
 
+
 @property (nonatomic,strong) UIScrollView *tabbarScrollview;
+//nullable : 标示当前属性可能为空,让外界使用时注意
+
+@property (nonatomic,weak,nullable) id <NavTabBarViewSelectDelegate>delegate;
 
 @end

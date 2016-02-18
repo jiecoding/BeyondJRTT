@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DNNavTabBarView.h"
 
-@interface DNHorizontalSelectController : UIViewController
+@interface DNHorizontalSelectController : UIViewController<NavTabBarViewSelectDelegate>
 
 //B类管理的子控制器
 @property (strong,nonatomic)NSArray *subViewControllers;
@@ -21,7 +21,7 @@
 @property (strong,nonatomic)DNNavTabBarView *navTabbarView;
 
 //B类 控制器上添加 滚动的mainView
-@property (nonatomic, strong) UIScrollView *mainView;
+@property (nonatomic, strong) UIScrollView *mainScrollView;
 
 
 

@@ -7,6 +7,7 @@
 //
 
 #import "DNHorizontalSelectController.h"
+#import "DNFashionVC.h"
 @interface DNHorizontalSelectController ()
 
 @end
@@ -21,27 +22,50 @@
     
     _navTabbarView = [[DNNavTabBarView alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 44)];
     _navTabbarView.backgroundColor = [UIColor blueColor];
-    
+    _navTabbarView.delegate  = self;
     [self.navigationController.navigationBar addSubview:_navTabbarView];
     
     
-    _mainView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    _mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     
-    _mainView.backgroundColor = [UIColor yellowColor];
-    
-    [self.view addSubview:_mainView];
-    
-    
-    UIViewController *tuijianVC =(UIViewController *)_subViewControllers[0];
-    
-    tuijianVC.view.frame = CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width, _mainView.frame.size.height);
-    
-    [_mainView addSubview:tuijianVC.view];
-    
-    [self addChildViewController:tuijianVC];
+    _mainScrollView.backgroundColor = [UIColor yellowColor];
+    _mainScrollView.contentSize = CGSizeMake(self.view.frame.size.width *_subViewControllers.count, self.view.frame.size.height);
+    _mainScrollView.showsHorizontalScrollIndicator = NO;
+    _mainScrollView.pagingEnabled  = YES;
+    [self.view addSubview:_mainScrollView];
+
+//    UIViewController *tuijianVC =(UIViewController *)_subViewControllers[0];
+//    
+//    tuijianVC.view.frame = CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width, _mainScrollView.frame.size.height);
+//    
+//    [_mainScrollView addSubview:tuijianVC.view];
+//    
+//    [self addChildViewController:tuijianVC];
+//    
+//    DNFashionVC *fashionVC= [[DNFashionVC alloc] init];
+//    fashionVC.view.frame = CGRectMake(self.view.frame.size.width, 0,[UIScreen mainScreen].bounds.size.width, _mainScrollView.frame.size.height);
+//    [_mainScrollView addSubview:fashionVC.view];
+//    [self addChildViewController:fashionVC];
+    [self subViewControllersManage];
+}
+
+- (void)subViewControllersManage
+{
+     for (int index = 0; index < _subViewControllers.count; index++) {
+        UIViewController *viewController = (UIViewController *)_subViewControllers[index];
+         viewController.view.frame =CGRectMake(self.view.frame.size.width * index, 0,[UIScreen mainScreen].bounds.size.width, _mainScrollView.frame.size.height);
+         [_mainScrollView addSubview:viewController.view];
+         [self addChildViewController:viewController];
+    }
     
     
 }
+
+- (void)selectTitle:(int)selectTitleIndex
+{
+    _mainScrollView.contentOffset = CGPointMake(self.view.frame.size.width*selectTitleIndex, 0);
+}
+
 
 - (void)addParentController:(UIViewController *)viewController
 {
