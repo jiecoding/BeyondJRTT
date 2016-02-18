@@ -2,3 +2,35 @@
 今日头条App的详细拆解分析和源码复现
 
 暂时简单实现了一个横向滑动的控制器导航条
+
+先来说说这个简单例子1 横向滑动导航条控制VC，思路是这样的：
+
+利用addChildViewController方法
+
+PS：在以前，一个UIViewController的View可能有很多小的子view。这些子view很多时候被盖在最后，我们在最外层ViewController的viewDidLoad方法中，用addSubview增加了大量的子view。这些子view大多数不会一直处于界面上，只是在某些情况下才会出现，例如登陆失败的提示view，上传附件成功的提示view，网络失败的提示view等。但是虽然这些view很少出现，但是我们却常常一直把它们放在内存中。另外，当收到内存警告时，我们只能自己手工把这些view从super view中去掉。
+
+改变
+
+苹果新的API增加了addChildViewController方法，并且希望我们在使用addSubview时，同时调用[self addChildViewController:child]方法将sub view对应的viewController也加到当前ViewController的管理中。对于那些当前暂时不需要显示的subview，只通过addChildViewController把subViewController加进去。需要显示时再调用transitionFromViewController:toViewController:duration:options:animations:completion方法。
+
+另外，当收到系统的Memory Warning的时候，系统也会自动把当前没有显示的subview unload掉，以节省内存。
+
+
+
+言归正传 
+
+A视图控制器（HomeViewController)来管理控制 B视图控制器 (DNHorizontalSelectController) ,B视图控制器去管理控制其他的子视图控制器(推荐、热点、北京....) 
+
+B视图控制器 管理的比较多且需要滚动显示，所以在DNHorizontalSelectController加了一层mainscrollview来进行滑动各个视图控制器的视图，并利用scrollview的delegate 里的方法来进行控制协调。
+
+根据需求来看 navigationbar上面需要有一个横条进行分类选择，并控制下面B类子控制器，且也是需要滚动。则在上面也用了一层scrollview(_tabbarScrollview)来滑动
+
+还有就是点击navigationbar的横条 (DNNavTabBarView) 上的标签(北京\热点\推荐\社会..)来控制切换不同的视图控制器
+这里很简单看代码 写了一个delegate 并进行索引来跳转
+
+最后就是滑动视图控制器来使标签和视图协调  利用 scrollview的delegate方法 进行 四舍五入的函数 还有 记录上一次选项和这一次选项 来进行 动态改变字体比例大小的完成不错的效果。 CGAffineTransformMakeScale两个参数,代表x和y方向缩放倍数
+
+一股脑的简单的写了个，感觉还行吧，正在继续优化，有什么建议的可以提，多谢
+
+
+
