@@ -44,6 +44,7 @@
 //    _mainScrollView.backgroundColor = [UIColor yellowColor];
     _mainScrollView.contentSize = CGSizeMake(self.view.frame.size.width *_subViewControllers.count, self.view.frame.size.height);
     _mainScrollView.showsHorizontalScrollIndicator = NO;
+    _mainScrollView.bounces = NO;
     _mainScrollView.pagingEnabled  = YES;
     [self.view addSubview:_mainScrollView];
 
@@ -85,6 +86,8 @@
 - (void)selectTitle:(NSInteger)selectTitleIndex
 {
     selectTitleIndex = selectTitleIndex%1000;
+    
+    
     _mainScrollView.contentOffset = CGPointMake(self.view.frame.size.width*selectTitleIndex, 0);
 }
 

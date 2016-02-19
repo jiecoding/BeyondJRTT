@@ -8,6 +8,15 @@
 
 #import "DNNavTabBarView.h"
 
+
+@interface DNNavTabBarView ()
+
+@property(nonatomic,assign) CGFloat scrollCurrentMinX;
+
+@property(nonatomic,assign) CGFloat scrollCurrentMaxX;
+
+@end
+
 @implementation DNNavTabBarView
 
 /*
@@ -19,6 +28,7 @@
     if(self = [super initWithFrame:frame])
     {
         _selectIndex = 0;
+        
         [self addView];
     }
     return self;
@@ -26,6 +36,10 @@
 - (void)addView
 {
     _tabbarScrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width - 34, self.frame.size.height)];
+ 
+    _scrollCurrentMinX = 0;
+    
+    _scrollCurrentMaxX = self.frame.size.width - 34;
     
 //    _tabbarScrollview.backgroundColor = [UIColor darkGrayColor];
     
@@ -33,11 +47,14 @@
     
     _tabbarScrollview.contentSize = CGSizeMake(self.frame.size.width *2, self.frame.size.height);
     
+    
     [self addSubview:_tabbarScrollview];
     
    
     
  }
+
+
 - (void)addTabbarButton
 {
     int buttonX = 10;
@@ -51,6 +68,7 @@
         [_tabbarScrollview addSubview:tabbarButton];
         buttonX = buttonX+60;
     }
+    _tabbarScrollview.contentSize = CGSizeMake(buttonX, self.frame.size.height);
 
 }
 
@@ -61,11 +79,12 @@
     
     UIButton *previouslyButton  = [self viewWithTag:_previouslySelect];
     
-     previouslyButton.transform =CGAffineTransformMakeScale(1,1);
+     previouslyButton.transform = CGAffineTransformMakeScale(1,1);
     
     button.transform = CGAffineTransformMakeScale(1.1, 1.1);
 
-    _selectIndex = button.tag %1000;
+    _selectIndex = button.tag % 1000;
+    _previouslySelect =  _previouslySelect%1000;
     
     [self.delegate selectTitle:button.tag];
     
@@ -78,8 +97,58 @@
     previouslyButton.transform =CGAffineTransformMakeScale(1,1);
     
     UIButton *selectButton  = [self viewWithTag:_selectIndex + 1000];
+    
     selectButton.transform = CGAffineTransformMakeScale(1.1, 1.1);
+    
+  
+    
+    // btn.x == i * 70;
+    
+     UIButton *selectBtn = [_tabbarScrollview viewWithTag:_selectIndex + 1000];
+    
+    if (_scrollCurrentMinX < _selectIndex * 70 > _scrollCurrentMaxX) {
+        
+    }else{
+    
+        if (_previouslySelect > _selectIndex) {
+            // 上一个点大于当前点  当前 x 于 最小值比
+            CGFloat currentBtnX = _selectIndex * 70;
+            
+            if (_scrollCurrentMinX > currentBtnX) {
+                CGPoint position = CGPointMake(currentBtnX - 10, 0);
+                        [_tabbarScrollview setContentOffset:position animated:YES];
+               // -
+                
+                CGFloat Dvalue = _scrollCurrentMinX - currentBtnX;
+                
+                _scrollCurrentMinX -= Dvalue;
+                
+                _scrollCurrentMaxX -= Dvalue;
+                
+            }
+            
+        }else if (_previouslySelect < _selectIndex){
+            // 上一个点小于当前点  当前 x 于 最大值比
+            CGFloat currentBtnX = _selectIndex * 70 ;
+            if (_scrollCurrentMaxX < currentBtnX) {
+                
+                NSLog(@"%f",CGRectGetMaxX(selectBtn.frame));
+                
+                    CGPoint position = CGPointMake((currentBtnX - _scrollCurrentMaxX)+10, 0);
+                    [_tabbarScrollview setContentOffset:position animated:YES];
+                
+                CGFloat value = currentBtnX -_scrollCurrentMaxX ;
+                
+                _scrollCurrentMinX += value;
+                
+                _scrollCurrentMaxX += value;
+                
+            }
+        }
+        
+    }
 
 }
+
 
 @end
