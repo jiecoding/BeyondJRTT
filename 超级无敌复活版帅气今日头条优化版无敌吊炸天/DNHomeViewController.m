@@ -54,7 +54,7 @@
     [horizontalController addParentController:self];
     
     
-    
+    NSLog(@"测试github");
     
 }
 
