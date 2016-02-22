@@ -102,7 +102,11 @@
     
   
     
-    // btn.x == i * 70;
+    NSLog(@"%f",_tabbarScrollview.bounds.size.width);
+    
+    NSLog(@"%f",self.bounds.size.width);
+    
+    // btn.x == i * 60;
     
      UIButton *selectBtn = [_tabbarScrollview viewWithTag:_selectIndex + 1000];
     
@@ -112,7 +116,7 @@
     
         if (_previouslySelect > _selectIndex) {
             // 上一个点大于当前点  当前 x 于 最小值比
-            CGFloat currentBtnX = _selectIndex * 70;
+            CGFloat currentBtnX = _selectIndex * 60;
             
             if (_scrollCurrentMinX > currentBtnX) {
                 CGPoint position = CGPointMake(currentBtnX - 10, 0);
@@ -129,12 +133,12 @@
             
         }else if (_previouslySelect < _selectIndex){
             // 上一个点小于当前点  当前 x 于 最大值比
-            CGFloat currentBtnX = _selectIndex * 70 ;
+            CGFloat currentBtnX = ((_selectIndex +1)  * 60) ;
             if (_scrollCurrentMaxX < currentBtnX) {
                 
                 NSLog(@"%f",CGRectGetMaxX(selectBtn.frame));
                 
-                    CGPoint position = CGPointMake((currentBtnX - _scrollCurrentMaxX)+10, 0);
+                    CGPoint position = CGPointMake((currentBtnX - _scrollCurrentMaxX) +10, 0);
                     [_tabbarScrollview setContentOffset:position animated:YES];
                 
                 CGFloat value = currentBtnX -_scrollCurrentMaxX ;

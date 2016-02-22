@@ -26,7 +26,8 @@
     dNTabbarController.viewControllers = @[nav];
    
     self.window.rootViewController = dNTabbarController;
-     
+
+    
     return YES;
 }
 
