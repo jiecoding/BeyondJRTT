@@ -24,38 +24,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor orangeColor];
-    //推荐视图控制器
-    DNRecommendVC *recommentVC = [[DNRecommendVC alloc] init];
-    recommentVC.title = @"推荐";
     
-  
-    DNFashionVC *fashionVC = [[DNFashionVC alloc] init];
+    NSArray *arrVC = @[@"DNRecommendVC",@"DNFashionVC",@"DNBeiJingViewController",@"DNVideoViewController",@"DNSocietyViewController",@"DNSubscriptionViewController"];
+    NSArray *arrTitle  = @[@"推荐",@"热点",@"北京",@"视频",@"社会",@"订阅"];
+    [self developmentVC:arrVC arrTitle:arrTitle];
+    NSLog(@"测试github");
     
-    fashionVC.title = @"热点";
+}
+
+- (void)developmentVC:(NSArray *)arrVC arrTitle:(NSArray *)arrTitle
+{
+    NSMutableArray *vcObjects = [[NSMutableArray alloc] initWithCapacity:arrVC.count];
     
-    DNBeiJingViewController *beijingVC = [[DNBeiJingViewController alloc] init];
-    beijingVC.title = @"北京";
-    
-    
-    DNVideoViewController *videoVC = [[DNVideoViewController alloc] init];
-    videoVC.title = @"视频";
-    
-    DNSocietyViewController *societyVC = [[DNSocietyViewController alloc] init];
-    societyVC.title = @"社会";
-    
-    
-    DNSubscriptionViewController *subscriptionVC = [[DNSubscriptionViewController alloc] init];
-    subscriptionVC.title = @"订阅";
+    for(int i = 0; i < [arrVC count]; i++){
+        UIViewController *viewVCCtrl = [NSClassFromString([arrVC objectAtIndex:i]) new];
+        viewVCCtrl.title  = [arrTitle objectAtIndex:i];
+        [vcObjects addObject:viewVCCtrl];
+    }
     
     DNHorizontalSelectController *horizontalController = [[DNHorizontalSelectController alloc] init];
     
-    horizontalController.subViewControllers =@[recommentVC,fashionVC,beijingVC,videoVC,societyVC,subscriptionVC];
+    horizontalController.subViewControllers =vcObjects;
     
     [horizontalController addParentController:self];
-    
-    
-    NSLog(@"测试github");
-    
+ 
 }
 
 
