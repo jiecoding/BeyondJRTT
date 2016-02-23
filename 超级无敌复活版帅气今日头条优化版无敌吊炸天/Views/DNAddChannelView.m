@@ -126,7 +126,9 @@
     DNMyChannelConectionCell *cell = (DNMyChannelConectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:indentifier forIndexPath:indexPath];
 
     cell.titleLabel.text =  [_myChannelTitles objectAtIndex:indexPath.row];
+    
     cell.deleteButton.alpha = deleteShowAlphe;
+    
     return cell;
 
 }

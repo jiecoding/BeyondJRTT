@@ -7,15 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B923852F1C759382003EE6B9 /* DNBeiJingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B923852E1C759382003EE6B9 /* DNBeiJingViewController.m */; };
-		B92385321C759593003EE6B9 /* DNVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B92385311C759593003EE6B9 /* DNVideoViewController.m */; };
-		B923853D1C75A15B003EE6B9 /* DNSocietyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B923853C1C75A15B003EE6B9 /* DNSocietyViewController.m */; };
-		B92385401C75A1DC003EE6B9 /* DNSubscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B923853F1C75A1DC003EE6B9 /* DNSubscriptionViewController.m */; };
-		B93A351F1C74206700D68613 /* DNHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B93A351E1C74206700D68613 /* DNHomeViewController.m */; };
 		B93A35241C743CC800D68613 /* DNHorizontalSelectController.m in Sources */ = {isa = PBXBuildFile; fileRef = B93A35231C743CC800D68613 /* DNHorizontalSelectController.m */; };
 		B93A35271C74479700D68613 /* DNNavTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B93A35261C74479700D68613 /* DNNavTabBarView.m */; };
-		B93A352A1C74538D00D68613 /* DNRecommendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B93A35291C74538D00D68613 /* DNRecommendVC.m */; };
-		B93A352D1C746FBD00D68613 /* DNFashionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B93A352C1C746FBD00D68613 /* DNFashionVC.m */; };
 		B98B505E1C7BF20400B54572 /* DNAddChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = B98B505D1C7BF20400B54572 /* DNAddChannelView.m */; };
 		B98B50641C7C248B00B54572 /* DNMyChannelConectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B98B50631C7C248B00B54572 /* DNMyChannelConectionCell.m */; };
 		B98B50661C7C249B00B54572 /* DNMyChannelConectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B98B50651C7C249B00B54572 /* DNMyChannelConectionCell.xib */; };
@@ -26,6 +19,13 @@
 		B9C9238C1C7410A2005D3FF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9C9238A1C7410A2005D3FF4 /* LaunchScreen.storyboard */; };
 		B9C923971C7410A2005D3FF4 /* _____________________Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C923961C7410A2005D3FF4 /* _____________________Tests.m */; };
 		B9C923A21C7410A2005D3FF4 /* _____________________UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C923A11C7410A2005D3FF4 /* _____________________UITests.m */; };
+		F5A51EE21C7C3F4D00A19A5E /* DNBeiJingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EDD1C7C3F4D00A19A5E /* DNBeiJingViewController.m */; };
+		F5A51EE31C7C3F4D00A19A5E /* DNFashionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EDF1C7C3F4D00A19A5E /* DNFashionVC.m */; };
+		F5A51EE41C7C3F4D00A19A5E /* DNHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EE11C7C3F4D00A19A5E /* DNHomeViewController.m */; };
+		F5A51EED1C7C3F5500A19A5E /* DNRecommendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EE61C7C3F5500A19A5E /* DNRecommendVC.m */; };
+		F5A51EEE1C7C3F5500A19A5E /* DNSocietyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EE81C7C3F5500A19A5E /* DNSocietyViewController.m */; };
+		F5A51EEF1C7C3F5500A19A5E /* DNSubscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EEA1C7C3F5500A19A5E /* DNSubscriptionViewController.m */; };
+		F5A51EF01C7C3F5500A19A5E /* DNVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EEC1C7C3F5500A19A5E /* DNVideoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,24 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B923852D1C759382003EE6B9 /* DNBeiJingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNBeiJingViewController.h; path = ../DNBeiJingViewController.h; sourceTree = "<group>"; };
-		B923852E1C759382003EE6B9 /* DNBeiJingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNBeiJingViewController.m; path = ../DNBeiJingViewController.m; sourceTree = "<group>"; };
-		B92385301C759593003EE6B9 /* DNVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNVideoViewController.h; path = ../DNVideoViewController.h; sourceTree = "<group>"; };
-		B92385311C759593003EE6B9 /* DNVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNVideoViewController.m; path = ../DNVideoViewController.m; sourceTree = "<group>"; };
-		B923853B1C75A15B003EE6B9 /* DNSocietyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNSocietyViewController.h; path = ../DNSocietyViewController.h; sourceTree = "<group>"; };
-		B923853C1C75A15B003EE6B9 /* DNSocietyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNSocietyViewController.m; path = ../DNSocietyViewController.m; sourceTree = "<group>"; };
-		B923853E1C75A1DC003EE6B9 /* DNSubscriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNSubscriptionViewController.h; path = ../DNSubscriptionViewController.h; sourceTree = "<group>"; };
-		B923853F1C75A1DC003EE6B9 /* DNSubscriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNSubscriptionViewController.m; path = ../DNSubscriptionViewController.m; sourceTree = "<group>"; };
-		B93A351D1C74206700D68613 /* DNHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNHomeViewController.h; path = ../DNHomeViewController.h; sourceTree = "<group>"; };
-		B93A351E1C74206700D68613 /* DNHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNHomeViewController.m; path = ../DNHomeViewController.m; sourceTree = "<group>"; };
 		B93A35221C743CC800D68613 /* DNHorizontalSelectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNHorizontalSelectController.h; sourceTree = "<group>"; };
 		B93A35231C743CC800D68613 /* DNHorizontalSelectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNHorizontalSelectController.m; sourceTree = "<group>"; };
 		B93A35251C74479700D68613 /* DNNavTabBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNNavTabBarView.h; sourceTree = "<group>"; };
 		B93A35261C74479700D68613 /* DNNavTabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNNavTabBarView.m; sourceTree = "<group>"; };
-		B93A35281C74538D00D68613 /* DNRecommendVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNRecommendVC.h; path = ../DNRecommendVC.h; sourceTree = "<group>"; };
-		B93A35291C74538D00D68613 /* DNRecommendVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNRecommendVC.m; path = ../DNRecommendVC.m; sourceTree = "<group>"; };
-		B93A352B1C746FBD00D68613 /* DNFashionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNFashionVC.h; path = ../DNFashionVC.h; sourceTree = "<group>"; };
-		B93A352C1C746FBD00D68613 /* DNFashionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNFashionVC.m; path = ../DNFashionVC.m; sourceTree = "<group>"; };
 		B98B505C1C7BF20400B54572 /* DNAddChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAddChannelView.h; sourceTree = "<group>"; };
 		B98B505D1C7BF20400B54572 /* DNAddChannelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAddChannelView.m; sourceTree = "<group>"; };
 		B98B50621C7C248B00B54572 /* DNMyChannelConectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNMyChannelConectionCell.h; sourceTree = "<group>"; };
@@ -83,6 +69,20 @@
 		B9C9239D1C7410A2005D3FF4 /* 超级无敌复活版帅气今日头条优化版无敌吊炸天UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C923A11C7410A2005D3FF4 /* _____________________UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____________________UITests.m"; sourceTree = "<group>"; };
 		B9C923A31C7410A2005D3FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5A51EDC1C7C3F4D00A19A5E /* DNBeiJingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNBeiJingViewController.h; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNBeiJingViewController.h"; sourceTree = SOURCE_ROOT; };
+		F5A51EDD1C7C3F4D00A19A5E /* DNBeiJingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNBeiJingViewController.m; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNBeiJingViewController.m"; sourceTree = SOURCE_ROOT; };
+		F5A51EDE1C7C3F4D00A19A5E /* DNFashionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNFashionVC.h; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNFashionVC.h"; sourceTree = SOURCE_ROOT; };
+		F5A51EDF1C7C3F4D00A19A5E /* DNFashionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNFashionVC.m; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNFashionVC.m"; sourceTree = SOURCE_ROOT; };
+		F5A51EE01C7C3F4D00A19A5E /* DNHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNHomeViewController.h; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNHomeViewController.h"; sourceTree = SOURCE_ROOT; };
+		F5A51EE11C7C3F4D00A19A5E /* DNHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNHomeViewController.m; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNHomeViewController.m"; sourceTree = SOURCE_ROOT; };
+		F5A51EE51C7C3F5500A19A5E /* DNRecommendVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNRecommendVC.h; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNRecommendVC.h"; sourceTree = SOURCE_ROOT; };
+		F5A51EE61C7C3F5500A19A5E /* DNRecommendVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNRecommendVC.m; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNRecommendVC.m"; sourceTree = SOURCE_ROOT; };
+		F5A51EE71C7C3F5500A19A5E /* DNSocietyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNSocietyViewController.h; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNSocietyViewController.h"; sourceTree = SOURCE_ROOT; };
+		F5A51EE81C7C3F5500A19A5E /* DNSocietyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNSocietyViewController.m; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNSocietyViewController.m"; sourceTree = SOURCE_ROOT; };
+		F5A51EE91C7C3F5500A19A5E /* DNSubscriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNSubscriptionViewController.h; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNSubscriptionViewController.h"; sourceTree = SOURCE_ROOT; };
+		F5A51EEA1C7C3F5500A19A5E /* DNSubscriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNSubscriptionViewController.m; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNSubscriptionViewController.m"; sourceTree = SOURCE_ROOT; };
+		F5A51EEB1C7C3F5500A19A5E /* DNVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNVideoViewController.h; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNVideoViewController.h"; sourceTree = SOURCE_ROOT; };
+		F5A51EEC1C7C3F5500A19A5E /* DNVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNVideoViewController.m; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNVideoViewController.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,20 +199,20 @@
 		B9D213B31C7AEFEC007E404F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B93A351D1C74206700D68613 /* DNHomeViewController.h */,
-				B93A351E1C74206700D68613 /* DNHomeViewController.m */,
-				B93A35281C74538D00D68613 /* DNRecommendVC.h */,
-				B93A35291C74538D00D68613 /* DNRecommendVC.m */,
-				B93A352B1C746FBD00D68613 /* DNFashionVC.h */,
-				B93A352C1C746FBD00D68613 /* DNFashionVC.m */,
-				B923852D1C759382003EE6B9 /* DNBeiJingViewController.h */,
-				B923852E1C759382003EE6B9 /* DNBeiJingViewController.m */,
-				B92385301C759593003EE6B9 /* DNVideoViewController.h */,
-				B92385311C759593003EE6B9 /* DNVideoViewController.m */,
-				B923853B1C75A15B003EE6B9 /* DNSocietyViewController.h */,
-				B923853C1C75A15B003EE6B9 /* DNSocietyViewController.m */,
-				B923853E1C75A1DC003EE6B9 /* DNSubscriptionViewController.h */,
-				B923853F1C75A1DC003EE6B9 /* DNSubscriptionViewController.m */,
+				F5A51EE51C7C3F5500A19A5E /* DNRecommendVC.h */,
+				F5A51EE61C7C3F5500A19A5E /* DNRecommendVC.m */,
+				F5A51EE71C7C3F5500A19A5E /* DNSocietyViewController.h */,
+				F5A51EE81C7C3F5500A19A5E /* DNSocietyViewController.m */,
+				F5A51EE91C7C3F5500A19A5E /* DNSubscriptionViewController.h */,
+				F5A51EEA1C7C3F5500A19A5E /* DNSubscriptionViewController.m */,
+				F5A51EEB1C7C3F5500A19A5E /* DNVideoViewController.h */,
+				F5A51EEC1C7C3F5500A19A5E /* DNVideoViewController.m */,
+				F5A51EDC1C7C3F4D00A19A5E /* DNBeiJingViewController.h */,
+				F5A51EDD1C7C3F4D00A19A5E /* DNBeiJingViewController.m */,
+				F5A51EDE1C7C3F4D00A19A5E /* DNFashionVC.h */,
+				F5A51EDF1C7C3F4D00A19A5E /* DNFashionVC.m */,
+				F5A51EE01C7C3F4D00A19A5E /* DNHomeViewController.h */,
+				F5A51EE11C7C3F4D00A19A5E /* DNHomeViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -352,16 +352,16 @@
 				B98B505E1C7BF20400B54572 /* DNAddChannelView.m in Sources */,
 				B9C923811C7410A2005D3FF4 /* AppDelegate.m in Sources */,
 				B93A35271C74479700D68613 /* DNNavTabBarView.m in Sources */,
-				B93A352D1C746FBD00D68613 /* DNFashionVC.m in Sources */,
+				F5A51EE31C7C3F4D00A19A5E /* DNFashionVC.m in Sources */,
 				B93A35241C743CC800D68613 /* DNHorizontalSelectController.m in Sources */,
-				B92385401C75A1DC003EE6B9 /* DNSubscriptionViewController.m in Sources */,
+				F5A51EED1C7C3F5500A19A5E /* DNRecommendVC.m in Sources */,
+				F5A51EE21C7C3F4D00A19A5E /* DNBeiJingViewController.m in Sources */,
 				B9C9237E1C7410A2005D3FF4 /* main.m in Sources */,
-				B92385321C759593003EE6B9 /* DNVideoViewController.m in Sources */,
-				B923852F1C759382003EE6B9 /* DNBeiJingViewController.m in Sources */,
-				B923853D1C75A15B003EE6B9 /* DNSocietyViewController.m in Sources */,
-				B93A351F1C74206700D68613 /* DNHomeViewController.m in Sources */,
-				B93A352A1C74538D00D68613 /* DNRecommendVC.m in Sources */,
+				F5A51EF01C7C3F5500A19A5E /* DNVideoViewController.m in Sources */,
 				B98B50641C7C248B00B54572 /* DNMyChannelConectionCell.m in Sources */,
+				F5A51EEE1C7C3F5500A19A5E /* DNSocietyViewController.m in Sources */,
+				F5A51EE41C7C3F4D00A19A5E /* DNHomeViewController.m in Sources */,
+				F5A51EEF1C7C3F5500A19A5E /* DNSubscriptionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

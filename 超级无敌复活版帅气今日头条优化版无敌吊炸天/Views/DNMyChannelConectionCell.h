@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DNMyChannelConectionCell : UICollectionViewCell
+
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UIButton *deleteButton;
 
