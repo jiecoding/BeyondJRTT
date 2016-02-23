@@ -60,7 +60,8 @@
 - (void)addButtonClick:(UIButton *)button
 {
     DNAddChannelView *addChannelView = [[DNAddChannelView alloc] initWithFrame:self.view.frame];
-    
+    addChannelView.myChannelTitles = _navTabbarView.titles;
+    NSLog(@"addChannelView.myChannelTitles:%@",addChannelView.myChannelTitles);
     [addChannelView show];
 }
 

@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DNAddChannelView : UIView
+@interface DNAddChannelView : UIView<UICollectionViewDataSource,UICollectionViewDelegate>
+{
+    int deleteShowAlphe;
+}
+@property (nonatomic,strong)NSArray *myChannelTitles;
+@property (nonatomic,strong)UIScrollView *bottomScrollview;
+@property (nonatomic,strong)UICollectionView *myChannelcollectionView;
+
 - (void)show;
+
 @end
