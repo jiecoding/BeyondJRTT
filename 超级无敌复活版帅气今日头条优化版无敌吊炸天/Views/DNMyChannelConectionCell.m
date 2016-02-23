@@ -11,14 +11,19 @@
 @implementation DNMyChannelConectionCell
 
 
+-(void)layoutSubviews{
+
+    [super layoutSubviews];
+    self.userInteractionEnabled = YES;
+    
+}
+
+
 - (IBAction)deleteCell:(UIButton *)sender {
     
     
     self.deleteButton.backgroundColor = [UIColor redColor];
     
 }
-
-
-
 
 @end

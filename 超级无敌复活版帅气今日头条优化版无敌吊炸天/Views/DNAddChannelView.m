@@ -7,7 +7,8 @@
 //
 
 #import "DNAddChannelView.h"
-#import "DNMyChannelConectionCell.h"
+//#import "DNMyChannelConectionCell.h"
+#import "DNTestMyChannelCollectionViewCell.h"
 @implementation DNAddChannelView
 
 - (void)show
@@ -71,8 +72,9 @@
     
     _myChannelcollectionView.backgroundColor = [UIColor clearColor];
    
+    [_myChannelcollectionView registerClass:[DNTestMyChannelCollectionViewCell class] forCellWithReuseIdentifier:@"DNTestMyChannelCollectionViewCell"];
     
-    [_myChannelcollectionView registerNib:[UINib nibWithNibName:@"DNMyChannelConectionCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
+//    [_myChannelcollectionView registerNib:[UINib nibWithNibName:@"DNTestMyChannelCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
 
     
     [_bottomScrollview addSubview:_myChannelcollectionView];
@@ -121,9 +123,9 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *indentifier = @"cell";
+    static NSString *indentifier = @"DNTestMyChannelCollectionViewCell";
     
-    DNMyChannelConectionCell *cell = (DNMyChannelConectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:indentifier forIndexPath:indexPath];
+    DNTestMyChannelCollectionViewCell *cell = (DNTestMyChannelCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:indentifier forIndexPath:indexPath];
 
     cell.titleLabel.text =  [_myChannelTitles objectAtIndex:indexPath.row];
     

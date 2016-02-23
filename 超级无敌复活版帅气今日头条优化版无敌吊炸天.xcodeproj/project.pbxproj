@@ -26,6 +26,7 @@
 		F5A51EEE1C7C3F5500A19A5E /* DNSocietyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EE81C7C3F5500A19A5E /* DNSocietyViewController.m */; };
 		F5A51EEF1C7C3F5500A19A5E /* DNSubscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EEA1C7C3F5500A19A5E /* DNSubscriptionViewController.m */; };
 		F5A51EF01C7C3F5500A19A5E /* DNVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EEC1C7C3F5500A19A5E /* DNVideoViewController.m */; };
+		F5A51EF31C7C501700A19A5E /* DNTestMyChannelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EF21C7C501700A19A5E /* DNTestMyChannelCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		F5A51EEA1C7C3F5500A19A5E /* DNSubscriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNSubscriptionViewController.m; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNSubscriptionViewController.m"; sourceTree = SOURCE_ROOT; };
 		F5A51EEB1C7C3F5500A19A5E /* DNVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNVideoViewController.h; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNVideoViewController.h"; sourceTree = SOURCE_ROOT; };
 		F5A51EEC1C7C3F5500A19A5E /* DNVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNVideoViewController.m; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNVideoViewController.m"; sourceTree = SOURCE_ROOT; };
+		F5A51EF11C7C501700A19A5E /* DNTestMyChannelCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNTestMyChannelCollectionViewCell.h; sourceTree = "<group>"; };
+		F5A51EF21C7C501700A19A5E /* DNTestMyChannelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNTestMyChannelCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 				B98B50621C7C248B00B54572 /* DNMyChannelConectionCell.h */,
 				B98B50631C7C248B00B54572 /* DNMyChannelConectionCell.m */,
 				B98B50651C7C249B00B54572 /* DNMyChannelConectionCell.xib */,
+				F5A51EF11C7C501700A19A5E /* DNTestMyChannelCollectionViewCell.h */,
+				F5A51EF21C7C501700A19A5E /* DNTestMyChannelCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				B98B50641C7C248B00B54572 /* DNMyChannelConectionCell.m in Sources */,
 				F5A51EEE1C7C3F5500A19A5E /* DNSocietyViewController.m in Sources */,
 				F5A51EE41C7C3F4D00A19A5E /* DNHomeViewController.m in Sources */,
+				F5A51EF31C7C501700A19A5E /* DNTestMyChannelCollectionViewCell.m in Sources */,
 				F5A51EEF1C7C3F5500A19A5E /* DNSubscriptionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
