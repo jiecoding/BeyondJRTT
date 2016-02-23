@@ -16,6 +16,7 @@
 		B93A35271C74479700D68613 /* DNNavTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B93A35261C74479700D68613 /* DNNavTabBarView.m */; };
 		B93A352A1C74538D00D68613 /* DNRecommendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B93A35291C74538D00D68613 /* DNRecommendVC.m */; };
 		B93A352D1C746FBD00D68613 /* DNFashionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B93A352C1C746FBD00D68613 /* DNFashionVC.m */; };
+		B98B505E1C7BF20400B54572 /* DNAddChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = B98B505D1C7BF20400B54572 /* DNAddChannelView.m */; };
 		B9C9237E1C7410A2005D3FF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C9237D1C7410A2005D3FF4 /* main.m */; };
 		B9C923811C7410A2005D3FF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C923801C7410A2005D3FF4 /* AppDelegate.m */; };
 		B9C923871C7410A2005D3FF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9C923851C7410A2005D3FF4 /* Main.storyboard */; };
@@ -61,6 +62,8 @@
 		B93A35291C74538D00D68613 /* DNRecommendVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNRecommendVC.m; path = ../DNRecommendVC.m; sourceTree = "<group>"; };
 		B93A352B1C746FBD00D68613 /* DNFashionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNFashionVC.h; path = ../DNFashionVC.h; sourceTree = "<group>"; };
 		B93A352C1C746FBD00D68613 /* DNFashionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNFashionVC.m; path = ../DNFashionVC.m; sourceTree = "<group>"; };
+		B98B505C1C7BF20400B54572 /* DNAddChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAddChannelView.h; sourceTree = "<group>"; };
+		B98B505D1C7BF20400B54572 /* DNAddChannelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAddChannelView.m; sourceTree = "<group>"; };
 		B9C923791C7410A2005D3FF4 /* 超级无敌复活版帅气今日头条优化版无敌吊炸天.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C9237D1C7410A2005D3FF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9C9237F1C7410A2005D3FF4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -113,6 +116,15 @@
 			path = DNHorizontalSelectController;
 			sourceTree = "<group>";
 		};
+		B98B50581C7BF1A200B54572 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B98B505C1C7BF20400B54572 /* DNAddChannelView.h */,
+				B98B505D1C7BF20400B54572 /* DNAddChannelView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B9C923701C7410A2005D3FF4 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +152,7 @@
 				B9C923801C7410A2005D3FF4 /* AppDelegate.m */,
 				B93A35211C743CBA00D68613 /* DNHorizontalSelectController */,
 				B9D213B31C7AEFEC007E404F /* ViewControllers */,
+				B98B50581C7BF1A200B54572 /* Views */,
 				B9C923851C7410A2005D3FF4 /* Main.storyboard */,
 				B9C923881C7410A2005D3FF4 /* Assets.xcassets */,
 				B9C9238A1C7410A2005D3FF4 /* LaunchScreen.storyboard */,
@@ -327,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B98B505E1C7BF20400B54572 /* DNAddChannelView.m in Sources */,
 				B9C923811C7410A2005D3FF4 /* AppDelegate.m in Sources */,
 				B93A35271C74479700D68613 /* DNNavTabBarView.m in Sources */,
 				B93A352D1C746FBD00D68613 /* DNFashionVC.m in Sources */,

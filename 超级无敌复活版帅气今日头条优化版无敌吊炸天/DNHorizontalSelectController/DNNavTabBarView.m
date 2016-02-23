@@ -46,11 +46,9 @@
     _tabbarScrollview.showsHorizontalScrollIndicator=  YES;
     
     _tabbarScrollview.contentSize = CGSizeMake(self.frame.size.width *2, self.frame.size.height);
-    
-    
+
     [self addSubview:_tabbarScrollview];
     
-   
     
  }
 

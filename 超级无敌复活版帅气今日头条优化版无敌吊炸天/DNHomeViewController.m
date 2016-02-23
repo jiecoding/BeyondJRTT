@@ -26,9 +26,11 @@
     self.view.backgroundColor = [UIColor orangeColor];
     
     NSArray *arrVC = @[@"DNRecommendVC",@"DNFashionVC",@"DNBeiJingViewController",@"DNVideoViewController",@"DNSocietyViewController",@"DNSubscriptionViewController"];
+    
     NSArray *arrTitle  = @[@"推荐",@"热点",@"北京",@"视频",@"社会",@"订阅"];
+    
     [self developmentVC:arrVC arrTitle:arrTitle];
-
+    
     
 }
 

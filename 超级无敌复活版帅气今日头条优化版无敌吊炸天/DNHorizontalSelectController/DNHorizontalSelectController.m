@@ -8,6 +8,7 @@
 
 #import "DNHorizontalSelectController.h"
 #import "DNFashionVC.h"
+#import "DNAddChannelView.h"
 @interface DNHorizontalSelectController ()
 
 @end
@@ -29,6 +30,7 @@
     UIButton *addImageButton = [UIButton buttonWithType:UIButtonTypeCustom];
     addImageButton.frame = CGRectMake(self.view.frame.size.width - 40, 0, 44, 44);
     [addImageButton setBackgroundImage:[UIImage imageNamed:@"btn_navigation_close"] forState:UIControlStateNormal];
+    [addImageButton addTarget:self action:@selector(addButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationController.navigationBar addSubview:addImageButton];
     
     
@@ -53,6 +55,13 @@
     
      _navTabbarView.previouslySelect =round(_mainScrollView.contentOffset.x / self.view.frame.size.width);
     
+}
+
+- (void)addButtonClick:(UIButton *)button
+{
+    DNAddChannelView *addChannelView = [[DNAddChannelView alloc] initWithFrame:self.view.frame];
+    
+    [addChannelView show];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
