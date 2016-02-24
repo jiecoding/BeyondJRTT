@@ -40,7 +40,6 @@
     self.titleLabel.frame = CGRectMake(19, 4, 52, 21);
     
     self.deleteButton.frame = CGRectMake(50,-5, 25, 25);
-//    self.deleteButton.backgroundColor = [UIColor redColor];
     [self.deleteButton setImage:[UIImage imageNamed:@"btn_navigation_back"] forState:UIControlStateNormal];
     [self.deleteButton addTarget:self action:@selector(deleteCell) forControlEvents:UIControlEventTouchUpInside];
     
@@ -50,7 +49,11 @@
 
 -(void)deleteCell{
 
-    NSLog(@"1234");
+//    NSLog(@"123");
+    
+    if ([self.delegate respondsToSelector:@selector(deleteCellWith:)]) {
+        [self.delegate deleteCellWith:self];
+    }
     
 }
 

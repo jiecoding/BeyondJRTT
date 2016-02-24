@@ -12,6 +12,7 @@
 {
     int deleteShowAlphe;
 }
+@property (nonatomic,copy) void (^deleteCell)(NSMutableArray * arry);
 @property (nonatomic,strong)NSArray *myChannelTitles;
 @property (nonatomic,strong)UIScrollView *bottomScrollview;
 @property (nonatomic,strong)UICollectionView *myChannelcollectionView;

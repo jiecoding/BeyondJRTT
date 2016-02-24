@@ -8,6 +8,11 @@
 
 #import "DNAddChannelView.h"
 #import "DNChannelCollectionViewCell.h"
+
+@interface DNAddChannelView ()<DNChannelCollectionViewCellDelegate>
+
+@end
+
 @implementation DNAddChannelView
 
 - (void)show
@@ -129,6 +134,9 @@
     cell.titleLabel.text =  [_myChannelTitles objectAtIndex:indexPath.row];
     cell.backgroundColor =[UIColor whiteColor];
     cell.deleteButton.alpha = deleteShowAlphe;
+    cell.hidden = NO;
+    cell.userInteractionEnabled = YES;
+    cell.delegate = self;
     
     return cell;
 
@@ -151,6 +159,108 @@
     }];
     [self removeFromSuperview];
 }
+
+
+-(void)deleteCellWith:(DNChannelCollectionViewCell *)cell{
+
+    // cell 隐藏
+    cell.hidden = YES;
+    // 获取当前的cell的index
+     NSIndexPath *index = [_myChannelcollectionView indexPathForCell:cell];
+    
+   // 判断是否是最后一个cell
+    if (index.row == self.myChannelTitles.count) {
+        NSMutableArray *mutabArr = [NSMutableArray arrayWithArray:_myChannelTitles];
+        
+        
+        for (int i = 0; i < mutabArr.count; i++) {
+            
+            NSString *str = mutabArr[i];
+            
+            if ([str isEqualToString:cell.titleLabel.text]) {
+                [mutabArr removeObjectAtIndex:i];
+                break;
+            }
+            
+        }
+        
+        _myChannelTitles = mutabArr;
+        
+        self.deleteCell(mutabArr);
+        cell.hidden = NO;
+        [_myChannelcollectionView reloadData];
+
+    }else{
+    
+        // 获取没个cell的point
+        NSMutableArray *currentArrayPoint = [NSMutableArray array];
+        
+        for (NSInteger i = 0; i < self.myChannelTitles.count; i++) {
+            
+            NSUInteger currentInteger[] = {0, i};
+            NSIndexPath *currentIndex = [[NSIndexPath alloc] initWithIndexes:currentInteger length:2];
+            //找到对应的cell
+            
+            DNChannelCollectionViewCell *currentCell = (DNChannelCollectionViewCell *)[_myChannelcollectionView cellForItemAtIndexPath:currentIndex];
+            currentCell.userInteractionEnabled = NO;
+            
+            //        CGPoint viewpoint = [currentCell convertPoint:currentCell.center toView:self];
+            
+            NSDictionary *dict = @{@"x":[NSString stringWithFormat:@"%f",currentCell.center.x],@"y":[NSString stringWithFormat:@"%f",currentCell.center.y]};
+            
+            [currentArrayPoint addObject:dict];
+        }
+
+        // 在选择后的cell进行位移.
+        for (NSInteger i = index.row; i < self.myChannelTitles.count - 1; i++) {
+            
+            NSUInteger movingInteger[] = {0, i + 1};
+            NSIndexPath *movingIndex = [[NSIndexPath alloc] initWithIndexes:movingInteger length:2];
+            //找到对应的cell
+            
+            DNChannelCollectionViewCell *movingCell = (DNChannelCollectionViewCell *)[_myChannelcollectionView cellForItemAtIndexPath:movingIndex];
+            
+            NSDictionary *dict = currentArrayPoint[i];
+            
+            
+            
+            CGPoint point = CGPointMake([dict[@"x"] integerValue], [dict[@"y"] integerValue]);
+            
+            [UIView animateWithDuration:1 animations:^{
+                movingCell.center = point;
+            } completion:^(BOOL finished) {
+                
+                // 当动画完成后array删除对应的cell
+                NSMutableArray *mutabArr = [NSMutableArray arrayWithArray:_myChannelTitles];
+                
+                
+                for (int i = 0; i < mutabArr.count; i++) {
+                    
+                    NSString *str = mutabArr[i];
+                    
+                    if ([str isEqualToString:cell.titleLabel.text]) {
+                        [mutabArr removeObjectAtIndex:i];
+                        break;
+                    }
+                    
+                }
+                
+                _myChannelTitles = mutabArr;
+                
+                self.deleteCell(mutabArr);
+                // cell 显示
+                cell.hidden = NO;
+                // 数据刷新
+                [_myChannelcollectionView reloadData];
+                
+            }];
+
+        }
+    }
+
+ }
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

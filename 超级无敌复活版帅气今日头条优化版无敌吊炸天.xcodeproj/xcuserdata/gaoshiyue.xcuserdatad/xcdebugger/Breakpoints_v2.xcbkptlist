@@ -4,17 +4,13 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x8d85;&#x7ea7;&#x65e0;&#x654c;&#x590d;&#x6d3b;&#x7248;&#x5e05;&#x6c14;&#x4eca;&#x65e5;&#x5934;&#x6761;&#x4f18;&#x5316;&#x7248;&#x65e0;&#x654c;&#x540a;&#x70b8;&#x5929;/DNSubscriptionViewController.h"
-            timestampString = "477819580.245235"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14">
+            scope = "0"
+            stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

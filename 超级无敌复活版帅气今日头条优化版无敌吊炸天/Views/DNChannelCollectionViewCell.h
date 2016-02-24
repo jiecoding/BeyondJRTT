@@ -7,10 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+@class DNChannelCollectionViewCell;
+
+@protocol DNChannelCollectionViewCellDelegate <NSObject>
+
+// 当点击cell的时候把自己闯过去进行为移动画
+-(void)deleteCellWith:(DNChannelCollectionViewCell *)cell;
+
+@end
 
 @interface DNChannelCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic)  UILabel *titleLabel;
 @property (weak, nonatomic)  UIButton *deleteButton;
+@property (weak, nonatomic)  id<DNChannelCollectionViewCellDelegate>delegate;
 
 @end
