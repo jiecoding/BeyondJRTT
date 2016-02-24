@@ -10,8 +10,6 @@
 		B93A35241C743CC800D68613 /* DNHorizontalSelectController.m in Sources */ = {isa = PBXBuildFile; fileRef = B93A35231C743CC800D68613 /* DNHorizontalSelectController.m */; };
 		B93A35271C74479700D68613 /* DNNavTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B93A35261C74479700D68613 /* DNNavTabBarView.m */; };
 		B98B505E1C7BF20400B54572 /* DNAddChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = B98B505D1C7BF20400B54572 /* DNAddChannelView.m */; };
-		B98B50641C7C248B00B54572 /* DNMyChannelConectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B98B50631C7C248B00B54572 /* DNMyChannelConectionCell.m */; };
-		B98B50661C7C249B00B54572 /* DNMyChannelConectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B98B50651C7C249B00B54572 /* DNMyChannelConectionCell.xib */; };
 		B9C9237E1C7410A2005D3FF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C9237D1C7410A2005D3FF4 /* main.m */; };
 		B9C923811C7410A2005D3FF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C923801C7410A2005D3FF4 /* AppDelegate.m */; };
 		B9C923871C7410A2005D3FF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9C923851C7410A2005D3FF4 /* Main.storyboard */; };
@@ -26,7 +24,7 @@
 		F5A51EEE1C7C3F5500A19A5E /* DNSocietyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EE81C7C3F5500A19A5E /* DNSocietyViewController.m */; };
 		F5A51EEF1C7C3F5500A19A5E /* DNSubscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EEA1C7C3F5500A19A5E /* DNSubscriptionViewController.m */; };
 		F5A51EF01C7C3F5500A19A5E /* DNVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EEC1C7C3F5500A19A5E /* DNVideoViewController.m */; };
-		F5A51EF31C7C501700A19A5E /* DNTestMyChannelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EF21C7C501700A19A5E /* DNTestMyChannelCollectionViewCell.m */; };
+		F5A51EF31C7C501700A19A5E /* DNChannelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EF21C7C501700A19A5E /* DNChannelCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,9 +51,6 @@
 		B93A35261C74479700D68613 /* DNNavTabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNNavTabBarView.m; sourceTree = "<group>"; };
 		B98B505C1C7BF20400B54572 /* DNAddChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAddChannelView.h; sourceTree = "<group>"; };
 		B98B505D1C7BF20400B54572 /* DNAddChannelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAddChannelView.m; sourceTree = "<group>"; };
-		B98B50621C7C248B00B54572 /* DNMyChannelConectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNMyChannelConectionCell.h; sourceTree = "<group>"; };
-		B98B50631C7C248B00B54572 /* DNMyChannelConectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNMyChannelConectionCell.m; sourceTree = "<group>"; };
-		B98B50651C7C249B00B54572 /* DNMyChannelConectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DNMyChannelConectionCell.xib; sourceTree = "<group>"; };
 		B9C923791C7410A2005D3FF4 /* 超级无敌复活版帅气今日头条优化版无敌吊炸天.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C9237D1C7410A2005D3FF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9C9237F1C7410A2005D3FF4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,8 +79,8 @@
 		F5A51EEA1C7C3F5500A19A5E /* DNSubscriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNSubscriptionViewController.m; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNSubscriptionViewController.m"; sourceTree = SOURCE_ROOT; };
 		F5A51EEB1C7C3F5500A19A5E /* DNVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNVideoViewController.h; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNVideoViewController.h"; sourceTree = SOURCE_ROOT; };
 		F5A51EEC1C7C3F5500A19A5E /* DNVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNVideoViewController.m; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNVideoViewController.m"; sourceTree = SOURCE_ROOT; };
-		F5A51EF11C7C501700A19A5E /* DNTestMyChannelCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNTestMyChannelCollectionViewCell.h; sourceTree = "<group>"; };
-		F5A51EF21C7C501700A19A5E /* DNTestMyChannelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNTestMyChannelCollectionViewCell.m; sourceTree = "<group>"; };
+		F5A51EF11C7C501700A19A5E /* DNChannelCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNChannelCollectionViewCell.h; sourceTree = "<group>"; };
+		F5A51EF21C7C501700A19A5E /* DNChannelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNChannelCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,11 +124,8 @@
 			children = (
 				B98B505C1C7BF20400B54572 /* DNAddChannelView.h */,
 				B98B505D1C7BF20400B54572 /* DNAddChannelView.m */,
-				B98B50621C7C248B00B54572 /* DNMyChannelConectionCell.h */,
-				B98B50631C7C248B00B54572 /* DNMyChannelConectionCell.m */,
-				B98B50651C7C249B00B54572 /* DNMyChannelConectionCell.xib */,
-				F5A51EF11C7C501700A19A5E /* DNTestMyChannelCollectionViewCell.h */,
-				F5A51EF21C7C501700A19A5E /* DNTestMyChannelCollectionViewCell.m */,
+				F5A51EF11C7C501700A19A5E /* DNChannelCollectionViewCell.h */,
+				F5A51EF21C7C501700A19A5E /* DNChannelCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -326,7 +318,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B98B50661C7C249B00B54572 /* DNMyChannelConectionCell.xib in Resources */,
 				B9C9238C1C7410A2005D3FF4 /* LaunchScreen.storyboard in Resources */,
 				B9C923891C7410A2005D3FF4 /* Assets.xcassets in Resources */,
 				B9C923871C7410A2005D3FF4 /* Main.storyboard in Resources */,
@@ -363,10 +354,9 @@
 				F5A51EE21C7C3F4D00A19A5E /* DNBeiJingViewController.m in Sources */,
 				B9C9237E1C7410A2005D3FF4 /* main.m in Sources */,
 				F5A51EF01C7C3F5500A19A5E /* DNVideoViewController.m in Sources */,
-				B98B50641C7C248B00B54572 /* DNMyChannelConectionCell.m in Sources */,
 				F5A51EEE1C7C3F5500A19A5E /* DNSocietyViewController.m in Sources */,
 				F5A51EE41C7C3F4D00A19A5E /* DNHomeViewController.m in Sources */,
-				F5A51EF31C7C501700A19A5E /* DNTestMyChannelCollectionViewCell.m in Sources */,
+				F5A51EF31C7C501700A19A5E /* DNChannelCollectionViewCell.m in Sources */,
 				F5A51EEF1C7C3F5500A19A5E /* DNSubscriptionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

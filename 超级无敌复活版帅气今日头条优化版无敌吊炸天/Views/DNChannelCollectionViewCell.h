@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DNTestMyChannelCollectionViewCell : UICollectionViewCell
+@interface DNChannelCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic)  UILabel *titleLabel;
 @property (weak, nonatomic)  UIButton *deleteButton;

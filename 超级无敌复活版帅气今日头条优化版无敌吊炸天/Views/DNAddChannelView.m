@@ -7,8 +7,7 @@
 //
 
 #import "DNAddChannelView.h"
-//#import "DNMyChannelConectionCell.h"
-#import "DNTestMyChannelCollectionViewCell.h"
+#import "DNChannelCollectionViewCell.h"
 @implementation DNAddChannelView
 
 - (void)show
@@ -72,7 +71,7 @@
     
     _myChannelcollectionView.backgroundColor = [UIColor clearColor];
    
-    [_myChannelcollectionView registerClass:[DNTestMyChannelCollectionViewCell class] forCellWithReuseIdentifier:@"DNTestMyChannelCollectionViewCell"];
+    [_myChannelcollectionView registerClass:[DNChannelCollectionViewCell class] forCellWithReuseIdentifier:@"DNTestMyChannelCollectionViewCell"];
     
 //    [_myChannelcollectionView registerNib:[UINib nibWithNibName:@"DNTestMyChannelCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
 
@@ -125,10 +124,10 @@
 {
     static NSString *indentifier = @"DNTestMyChannelCollectionViewCell";
     
-    DNTestMyChannelCollectionViewCell *cell = (DNTestMyChannelCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:indentifier forIndexPath:indexPath];
+    DNChannelCollectionViewCell *cell = (DNChannelCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:indentifier forIndexPath:indexPath];
 
     cell.titleLabel.text =  [_myChannelTitles objectAtIndex:indexPath.row];
-    
+    cell.backgroundColor =[UIColor whiteColor];
     cell.deleteButton.alpha = deleteShowAlphe;
     
     return cell;

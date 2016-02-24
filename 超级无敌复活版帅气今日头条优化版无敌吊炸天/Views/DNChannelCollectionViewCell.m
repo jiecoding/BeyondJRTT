@@ -6,9 +6,9 @@
 //  Copyright © 2016年 iosqun328218600. All rights reserved.
 //
 
-#import "DNTestMyChannelCollectionViewCell.h"
+#import "DNChannelCollectionViewCell.h"
 
-@implementation DNTestMyChannelCollectionViewCell
+@implementation DNChannelCollectionViewCell
 
 -(UILabel *)titleLabel{
 
@@ -37,10 +37,11 @@
 
     [super layoutSubviews];
     
-    self.titleLabel.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+    self.titleLabel.frame = CGRectMake(19, 4, 52, 21);
     
-    self.deleteButton.frame = CGRectMake(0, 0, 25, 25);
-    self.deleteButton.backgroundColor = [UIColor redColor];
+    self.deleteButton.frame = CGRectMake(50,-5, 25, 25);
+//    self.deleteButton.backgroundColor = [UIColor redColor];
+    [self.deleteButton setImage:[UIImage imageNamed:@"btn_navigation_back"] forState:UIControlStateNormal];
     [self.deleteButton addTarget:self action:@selector(deleteCell) forControlEvents:UIControlEventTouchUpInside];
     
 
