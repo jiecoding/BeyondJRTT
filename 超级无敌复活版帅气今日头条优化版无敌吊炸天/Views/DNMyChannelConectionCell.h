@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UIButton *deleteButton;
+- (IBAction)deleteAction:(id)sender;
 
 @end

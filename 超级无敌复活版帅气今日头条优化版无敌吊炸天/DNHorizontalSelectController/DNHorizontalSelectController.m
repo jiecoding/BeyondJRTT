@@ -73,7 +73,6 @@
     _navTabbarView.previouslySelect = _navTabbarView.selectIndex;
 }
 
-
 - (void)subViewControllersManage
 {
     NSMutableArray *mutableTitles = [[NSMutableArray alloc] initWithCapacity:_subViewControllers.count];
