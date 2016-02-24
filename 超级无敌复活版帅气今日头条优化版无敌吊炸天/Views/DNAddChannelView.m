@@ -222,11 +222,9 @@
             
             NSDictionary *dict = currentArrayPoint[i];
             
-            
-            
             CGPoint point = CGPointMake([dict[@"x"] integerValue], [dict[@"y"] integerValue]);
             
-            [UIView animateWithDuration:1 animations:^{
+            [UIView animateWithDuration:0.5 animations:^{
                 movingCell.center = point;
             } completion:^(BOOL finished) {
                 

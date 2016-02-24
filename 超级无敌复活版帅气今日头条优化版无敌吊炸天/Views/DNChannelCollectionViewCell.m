@@ -9,7 +9,7 @@
 #import "DNChannelCollectionViewCell.h"
 
 @implementation DNChannelCollectionViewCell
-
+ //这样写创建不会重复创建和开辟内存..
 -(UILabel *)titleLabel{
 
     if (!_titleLabel) {
