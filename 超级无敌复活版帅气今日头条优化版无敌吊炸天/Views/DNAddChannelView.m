@@ -226,21 +226,29 @@
             NSLog(@"%@",movingCell.titleLabel.text);
             
             CGPoint point = CGPointMake([dict[@"x"] integerValue], [dict[@"y"] integerValue]);
+
+            CABasicAnimation *anima=[CABasicAnimation animation];
+            
+                 //1.1告诉系统要执行什么样的动画
+                 anima.keyPath=@"position";
+               //设置通过动画，将layer从哪儿移动到哪儿
+                 anima.fromValue=[NSValue valueWithCGPoint:movingCell.center];
+                 anima.toValue=[NSValue valueWithCGPoint:point];
+            
+                 //1.2设置动画执行完毕之后不删除动画
+                 anima.removedOnCompletion=NO;
+                 anima.duration = 1;
+                 //1.3设置保存动画的最新状态
+                 anima.fillMode=kCAFillModeForwards;
+                 anima.delegate=self;
+
+            
+                //2.添加核心动画到layer
+                [movingCell.layer addAnimation:anima forKey:nil];
             
             
-            [UIView animateWithDuration:1 animations:^{
-                //
-                movingCell.layer.position = point;
-                //
-            } completion:^(BOOL finished) {
-                
-                // 当动画完成后array删除对应的cell
-                
-                if (finished == YES) {
-                    //
-                    
-                    
                     if (i + 1 == self.myChannelTitles.count) {
+                        
                         NSMutableArray *mutabArr = [NSMutableArray arrayWithArray:_myChannelTitles];
                         
                         
@@ -256,30 +264,20 @@
                         }
                         
                         _myChannelTitles = [NSArray arrayWithArray:mutabArr];
-                        //                        cell.userInteractionEnabled = YES;
-                        
-                        
-                        [self reloadDataCollectionData];
+    
                     }
-                    
-                }
-                
-            }];
-            
+           
         }
     }
     
+    
 }
 
+-(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
 
--(void)reloadDataCollectionData {
+     [_myChannelcollectionView reloadData];
     
-    NSMutableArray *mutabArr = [NSMutableArray arrayWithArray:_myChannelTitles];
-    
-    self.deleteCell(mutabArr);
-    // cell 显示
-    // 数据刷新
-        [_myChannelcollectionView reloadData];
 }
+
 
 @end
