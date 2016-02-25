@@ -48,8 +48,6 @@
 
 
 -(void)deleteCell{
-
-//    NSLog(@"123");
     
     if ([self.delegate respondsToSelector:@selector(deleteCellWith:)]) {
         [self.delegate deleteCellWith:self];
