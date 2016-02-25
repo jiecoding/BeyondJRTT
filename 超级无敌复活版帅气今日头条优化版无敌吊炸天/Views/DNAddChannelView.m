@@ -11,6 +11,10 @@
 
 @interface DNAddChannelView ()<DNChannelCollectionViewCellDelegate>
 
+@property (nonatomic,strong)UIScrollView *bottomScrollview;
+
+@property (nonatomic,strong)UICollectionView *myChannelcollectionView;
+
 @end
 
 @implementation DNAddChannelView
@@ -168,10 +172,10 @@
     // 获取当前的cell的index
      NSIndexPath *index = [_myChannelcollectionView indexPathForCell:cell];
     
-    NSLog(@"index.row :%d  self.myChannelTitles.count:%lu",(int)index.row,(unsigned long)self.myChannelTitles.count);
    // 判断是否是最后一个cell
-    if (index.row  + 1 == self.myChannelTitles.count) {
+    if (index.row == self.myChannelTitles.count) {
         NSMutableArray *mutabArr = [NSMutableArray arrayWithArray:_myChannelTitles];
+        
         
         for (int i = 0; i < mutabArr.count; i++) {
             
@@ -187,9 +191,7 @@
         _myChannelTitles = mutabArr;
         
         self.deleteCell(mutabArr);
-        
         cell.hidden = NO;
-        
         [_myChannelcollectionView reloadData];
 
     }else{
@@ -227,19 +229,29 @@
             NSLog(@"%@",movingCell.titleLabel.text);
             
             CGPoint point = CGPointMake([dict[@"x"] integerValue], [dict[@"y"] integerValue]);
+
+            CABasicAnimation *anima=[CABasicAnimation animation];
             
+                 //1.1告诉系统要执行什么样的动画
+                 anima.keyPath=@"position";
+               //设置通过动画，将layer从哪儿移动到哪儿
+                 anima.fromValue=[NSValue valueWithCGPoint:movingCell.center];
+                 anima.toValue=[NSValue valueWithCGPoint:point];
             
-            [UIView animateWithDuration:1 animations:^{
-                //
-                movingCell.layer.position = point;
-                //
-            } completion:^(BOOL finished) {
-                
-                if (finished == YES) {
-                    //
-                    
-                    
+                 //1.2设置动画执行完毕之后不删除动画
+                 anima.removedOnCompletion=NO;
+                 anima.duration = 0.5;
+                 //1.3设置保存动画的最新状态
+                 anima.fillMode=kCAFillModeForwards;
+                 anima.delegate=self;
+
+            
+                //2.添加核心动画到layer
+                [movingCell.layer addAnimation:anima forKey:nil];
+            
+ 
                     if (i + 1 == self.myChannelTitles.count) {
+                        
                         NSMutableArray *mutabArr = [NSMutableArray arrayWithArray:_myChannelTitles];
                         
                         
@@ -255,31 +267,20 @@
                         }
                         
                         _myChannelTitles = [NSArray arrayWithArray:mutabArr];
-                        //                        cell.userInteractionEnabled = YES;
-                        
-                        
-                        [self reloadDataCollectionData];
- 
+    
                     }
-                    
-                }
-                
-            }];
-            
+           
         }
     }
     
+    
 }
 
+-(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
 
--(void)reloadDataCollectionData {
+     [_myChannelcollectionView reloadData];
     
-    NSMutableArray *mutabArr = [NSMutableArray arrayWithArray:_myChannelTitles];
-    
-    self.deleteCell(mutabArr);
-    // cell 显示
-    // 数据刷新
-        [_myChannelcollectionView reloadData];
 }
+
 
 @end

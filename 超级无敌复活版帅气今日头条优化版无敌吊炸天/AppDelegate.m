@@ -22,6 +22,7 @@
     
     UITabBarController *dNTabbarController = [[UITabBarController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] init];
+    
     nav.viewControllers = @[homeVC];
     dNTabbarController.viewControllers = @[nav];
    

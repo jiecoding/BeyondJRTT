@@ -15,6 +15,8 @@
 
 @property(nonatomic,assign) CGFloat scrollCurrentMaxX;
 
+@property (nonatomic,strong) UIScrollView *tabbarScrollview;
+
 @end
 
 @implementation DNNavTabBarView
@@ -54,13 +56,13 @@
  }
 
 
-- (void)addTabbarButton
+- (void)addTabbarButtonAndButtonTitles:(NSArray *)titles controllClassNames:(NSArray *)controllClassNames
 {
     int buttonX = 10;
-    for (int i = 0; i<_titles.count; i++) {
+    for (int i = 0; i<titles.count; i++) {
         UIButton *tabbarButton  = [UIButton buttonWithType:UIButtonTypeCustom];
         tabbarButton.frame = CGRectMake(buttonX, 0, 44, 44);
-        [tabbarButton setTitle:_titles[i] forState:UIControlStateNormal];
+        [tabbarButton setTitle:titles[i] forState:UIControlStateNormal];
         tabbarButton.tag = i + 1000;
         [tabbarButton addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -85,7 +87,7 @@
     _selectIndex = button.tag % 1000;
     _previouslySelect =  _previouslySelect%1000;
     
-    [self.delegate didSelectIndexAtNavTabbar:button.tag];
+    [self.delegate navTabBarView:self didSelectIndex:button.tag];
     
     
 }
