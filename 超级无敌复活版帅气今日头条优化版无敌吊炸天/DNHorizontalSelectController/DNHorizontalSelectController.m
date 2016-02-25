@@ -63,7 +63,7 @@
     addChannelView.myChannelTitles = _navTabbarView.titles;
     NSLog(@"addChannelView.myChannelTitles:%@",addChannelView.myChannelTitles);
     addChannelView.deleteCell = ^(NSMutableArray *array){
-        _navTabbarView.titles = array;
+//        _navTabbarView.titles = array;
 #warning 这个地方让navtabbarview从新加载一遍数组..还有控制器
     };
     [addChannelView show];
