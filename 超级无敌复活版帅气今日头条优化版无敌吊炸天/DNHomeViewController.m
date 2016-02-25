@@ -19,30 +19,31 @@
 @end
 
 @implementation DNHomeViewController
- 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor orangeColor];
     
-    NSArray *arrVC = @[@"DNRecommendVC",@"DNFashionVC",@"DNBeiJingViewController",@"DNVideoViewController",@"DNSocietyViewController",@"DNSubscriptionViewController"];
-//     NSArray *arrVC = @[@"DNRecommendVC",@"DNFashionVC",@"DNBeiJingViewController",@"DNVideoViewController",@"DNSocietyViewController"];
+    NSArray *controllClassNames = @[@"DNRecommendVC",@"DNFashionVC",@"DNBeiJingViewController",@"DNVideoViewController",@"DNSocietyViewController",@"DNSubscriptionViewController"];
+ 
+ 
+    NSArray *tabBarTitles  = @[@"推荐",@"热点",@"北京",@"视频",@"社会",@"订阅"];
+ 
     
-    NSArray *arrTitle  = @[@"推荐",@"热点",@"北京",@"视频",@"社会",@"订阅"];
-//    NSArray *arrTitle  = @[@"推荐",@"热点",@"北京",@"视频",@"社会"];
-    
-    [self developmentVC:arrVC arrTitle:arrTitle];
+    [self developmentControllClassNames:controllClassNames tabBarTitles:tabBarTitles];
     
     
 }
 
-- (void)developmentVC:(NSArray *)arrVC arrTitle:(NSArray *)arrTitle
+- (void)developmentControllClassNames:(NSArray *)controllClassNames tabBarTitles:(NSArray *)arrTitles
 {
-    NSMutableArray *vcObjects = [[NSMutableArray alloc] initWithCapacity:arrVC.count];
+    NSMutableArray *vcObjects = [[NSMutableArray alloc] initWithCapacity:controllClassNames.count];
     
-    for(int i = 0; i < [arrVC count]; i++){
-        UIViewController *viewVCCtrl = [NSClassFromString([arrVC objectAtIndex:i]) new];
-        viewVCCtrl.title  = [arrTitle objectAtIndex:i];
+    for(int i = 0; i < [controllClassNames count]; i++){
+        UIViewController *viewVCCtrl = [NSClassFromString([controllClassNames objectAtIndex:i]) new];
+        viewVCCtrl.title  = [arrTitles objectAtIndex:i];
         [vcObjects addObject:viewVCCtrl];
     }
     

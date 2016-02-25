@@ -11,6 +11,10 @@
 
 @interface DNAddChannelView ()<DNChannelCollectionViewCellDelegate>
 
+@property (nonatomic,strong)UIScrollView *bottomScrollview;
+
+@property (nonatomic,strong)UICollectionView *myChannelcollectionView;
+
 @end
 
 @implementation DNAddChannelView
@@ -29,8 +33,6 @@
     }];
     
 }
-
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if(self = [super initWithFrame:frame])
@@ -49,16 +51,14 @@
     }
     return self;
 }
-
 - (void)addCommendCollectionView
 {
     UIView *commendBottomView = [[UIView alloc] initWithFrame:CGRectMake(0,_myChannelcollectionView.frame.size.height, self.frame.size.width,self.frame.size.height - _myChannelcollectionView.frame.size.height)];
-
+//    commendBottomView.backgroundColor = [UIColor greenColor];
     [_bottomScrollview addSubview:commendBottomView];
     
     UILabel *commendLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 80, 20)];
     commendLabel.text =@"频道推荐";
-
     [commendBottomView addSubview:commendLabel];
     
 }
@@ -67,13 +67,12 @@
 {
     _bottomScrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64,self.frame.size.width, self.frame.size.height)];
     _bottomScrollview.contentSize = CGSizeMake(self.frame.size.width, 800);
-
+//    bottomScrollview.backgroundColor = [UIColor orangeColor];
     [self addSubview:_bottomScrollview];
     //初始化布局类(UICollectionViewLayout的子类)
     UICollectionViewFlowLayout *fl = [[UICollectionViewFlowLayout alloc]init];
     
     _myChannelcollectionView =  [[UICollectionView alloc] initWithFrame:CGRectMake(0,30, self.frame.size.width, 150) collectionViewLayout:fl];
-  
     
     _myChannelcollectionView.delegate =  self;
     
@@ -82,6 +81,9 @@
     _myChannelcollectionView.backgroundColor = [UIColor clearColor];
    
     [_myChannelcollectionView registerClass:[DNChannelCollectionViewCell class] forCellWithReuseIdentifier:@"DNTestMyChannelCollectionViewCell"];
+    
+//    [_myChannelcollectionView registerNib:[UINib nibWithNibName:@"DNTestMyChannelCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
+
     
     [_bottomScrollview addSubview:_myChannelcollectionView];
     
@@ -99,31 +101,6 @@
     [editButton addTarget:self action:@selector(editButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [_bottomScrollview addSubview:editButton];
 
-}
-
--(void)setMyChannelTitles:(NSArray *)myChannelTitles{
-
-    _myChannelTitles = myChannelTitles;
-    
-    // 每个cell 50
-    [self reloadMyChannelcollcetionViewHeightWithTitles];
-}
-
-//
--(void)reloadMyChannelcollcetionViewHeightWithTitles{
-
-    NSLog(@"count == %zd",_myChannelTitles.count);
-    
-    NSInteger suplusNumber = _myChannelTitles.count%4;
-    NSInteger row = 1;
-    if (suplusNumber != 0) {
-        row = _myChannelTitles.count/4;
-        row++;
-    }else{
-        row = _myChannelTitles.count/4;
-    }
-    
-    _myChannelcollectionView.frame = CGRectMake(0, 30, self.frame.size.width, row * 50);
 }
 
 - (void)editButtonAction:(UIButton *)button
@@ -189,7 +166,7 @@
 
 
 -(void)deleteCellWith:(DNChannelCollectionViewCell *)cell{
-
+    
     // cell 隐藏
     cell.hidden = YES;
     // 获取当前的cell的index
@@ -229,7 +206,10 @@
             //找到对应的cell
             
             DNChannelCollectionViewCell *currentCell = (DNChannelCollectionViewCell *)[_myChannelcollectionView cellForItemAtIndexPath:currentIndex];
-
+//            currentCell.userInteractionEnabled = NO;
+            
+            //        CGPoint viewpoint = [currentCell convertPoint:currentCell.center toView:self];
+            
             NSDictionary *dict = @{@"x":[NSString stringWithFormat:@"%f",currentCell.center.x],@"y":[NSString stringWithFormat:@"%f",currentCell.center.y]};
             
             [currentArrayPoint addObject:dict];
@@ -246,6 +226,8 @@
             
             NSDictionary *dict = currentArrayPoint[i];
             
+            NSLog(@"%@",movingCell.titleLabel.text);
+            
             CGPoint point = CGPointMake([dict[@"x"] integerValue], [dict[@"y"] integerValue]);
 
             CABasicAnimation *anima=[CABasicAnimation animation];
@@ -258,7 +240,7 @@
             
                  //1.2设置动画执行完毕之后不删除动画
                  anima.removedOnCompletion=NO;
-                 anima.duration = 1;
+                 anima.duration = 0.5;
                  //1.3设置保存动画的最新状态
                  anima.fillMode=kCAFillModeForwards;
                  anima.delegate=self;
@@ -267,7 +249,7 @@
                 //2.添加核心动画到layer
                 [movingCell.layer addAnimation:anima forKey:nil];
             
-            
+ 
                     if (i + 1 == self.myChannelTitles.count) {
                         
                         NSMutableArray *mutabArr = [NSMutableArray arrayWithArray:_myChannelTitles];
@@ -296,8 +278,6 @@
 
 -(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
 
-    [self reloadMyChannelcollcetionViewHeightWithTitles];
-    
      [_myChannelcollectionView reloadData];
     
 }

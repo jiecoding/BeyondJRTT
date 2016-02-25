@@ -10,10 +10,9 @@
 @class DNChannelCollectionViewCell;
 
 @protocol DNChannelCollectionViewCellDelegate <NSObject>
-
+@required
 // 当点击cell的时候把自己闯过去进行为移动画
 -(void)deleteCellWith:(DNChannelCollectionViewCell *)cell;
-
 @end
 
 @interface DNChannelCollectionViewCell : UICollectionViewCell

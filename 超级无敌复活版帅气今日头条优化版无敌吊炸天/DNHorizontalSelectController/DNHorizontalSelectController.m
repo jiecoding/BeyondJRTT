@@ -10,7 +10,9 @@
 #import "DNFashionVC.h"
 #import "DNAddChannelView.h"
 @interface DNHorizontalSelectController ()
-
+{
+    NSMutableArray *_channelTitles;
+}
 //导航栏的类似tabbar的View
 @property (strong,nonatomic)DNNavTabBarView *navTabbarView;
 
@@ -66,9 +68,8 @@
 - (void)addButtonClick:(UIButton *)button
 {
     DNAddChannelView *addChannelView = [[DNAddChannelView alloc] initWithFrame:self.view.frame];
-    addChannelView.myChannelTitles = _navTabbarView.titles;
-    NSLog(@"addChannelView.myChannelTitles:%@",addChannelView.myChannelTitles);
-    addChannelView.deleteCell = ^(NSMutableArray *array){
+   addChannelView.myChannelTitles = _channelTitles;
+   addChannelView.deleteCell = ^(NSMutableArray *array){
 //        _navTabbarView.titles = array;
 #warning 这个地方让navtabbarview从新加载一遍数组..还有控制器
     };
@@ -85,7 +86,8 @@
 
 - (void)subViewControllersManage
 {
-    NSMutableArray *mutableTitles = [[NSMutableArray alloc] initWithCapacity:_subViewControllers.count];
+    
+    _channelTitles = [[NSMutableArray alloc] initWithCapacity:_subViewControllers.count];
     
      for (int index = 0; index < _subViewControllers.count; index++) {
         UIViewController *viewController = (UIViewController *)_subViewControllers[index];
@@ -94,22 +96,21 @@
          [self addChildViewController:viewController];
          
          NSString *titleStr = [_subViewControllers[index] title];
-         [mutableTitles addObject:titleStr];
+         [_channelTitles addObject:titleStr];
      }
     
-   _navTabbarView.titles = mutableTitles;
+//   _navTabbarView.titles = mutableTitles;
  
-    [_navTabbarView addTabbarButton];
+    [_navTabbarView addTabbarButtonAndButtonTitles:_channelTitles controllClassNames:_subViewControllers];
 }
 
-- (void)selectTitle:(NSInteger)selectTitleIndex
+- (void)navTabBarView:(DNNavTabBarView *)navTabBarView didSelectIndex:(NSInteger )index
 {
-    selectTitleIndex = selectTitleIndex%1000;
-    
-    
-    _mainScrollView.contentOffset = CGPointMake(self.view.frame.size.width*selectTitleIndex, 0);
-}
+    index = index%1000;
 
+    _mainScrollView.contentOffset = CGPointMake(self.view.frame.size.width*index, 0);
+}
+//
 
 - (void)addParentController:(UIViewController *)viewController
 {
