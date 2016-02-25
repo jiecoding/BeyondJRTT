@@ -108,6 +108,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B937D6461C7D85790093E6C4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		B93A35211C743CBA00D68613 /* DNHorizontalSelectController */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +129,7 @@
 		B98B50581C7BF1A200B54572 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B937D6461C7D85790093E6C4 /* Cells */,
 				B98B505C1C7BF20400B54572 /* DNAddChannelView.h */,
 				B98B505D1C7BF20400B54572 /* DNAddChannelView.m */,
 				F5A51EF11C7C501700A19A5E /* DNChannelCollectionViewCell.h */,

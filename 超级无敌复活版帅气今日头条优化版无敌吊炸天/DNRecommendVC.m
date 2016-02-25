@@ -39,8 +39,6 @@
     if(!cell)
     {
         cell = [[UITableViewCell alloc] init];
-        
-        
     }
     
     return cell;
