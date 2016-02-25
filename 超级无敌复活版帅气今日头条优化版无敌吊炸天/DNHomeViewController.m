@@ -19,17 +19,16 @@
 @end
 
 @implementation DNHomeViewController
- 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor orangeColor];
     
-//    NSArray *arrVC = @[@"DNRecommendVC",@"DNFashionVC",@"DNBeiJingViewController",@"DNVideoViewController",@"DNSocietyViewController",@"DNSubscriptionViewController"];
-     NSArray *arrVC = @[@"DNRecommendVC",@"DNFashionVC",@"DNBeiJingViewController",@"DNVideoViewController",@"DNSocietyViewController"];
+    NSArray *arrVC = @[@"DNRecommendVC",@"DNFashionVC",@"DNBeiJingViewController",@"DNVideoViewController",@"DNSocietyViewController",@"DNSubscriptionViewController"];
     
-//    NSArray *arrTitle  = @[@"推荐",@"热点",@"北京",@"视频",@"社会",@"订阅"];
-    NSArray *arrTitle  = @[@"推荐",@"热点",@"北京",@"视频",@"社会"];
+    NSArray *arrTitle  = @[@"推荐",@"热点",@"北京",@"视频",@"社会",@"订阅"];
     
     [self developmentVC:arrVC arrTitle:arrTitle];
     

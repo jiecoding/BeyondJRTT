@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 @protocol NavTabBarViewSelectDelegate
 
-- (void)selectTitle:(NSInteger)selectTitleIndex;
+- (void)didSelectIndexAtNavTabbar:(NSInteger)index;
 
 @end
 
 @interface DNNavTabBarView : UIView
 
+@property(nonatomic) NSUInteger selectedIndex;
 
 @property (nonatomic,strong) UIScrollView *tabbarScrollview;
 //nullable : 标示当前属性可能为空,让外界使用时注意
@@ -26,6 +27,8 @@
 @property (nonatomic)NSInteger selectIndex;
 
 @property (nonatomic)NSInteger previouslySelect;
+
 - (void)addTabbarButton;
+
 - (void)scrollviewSelectButton;
 @end

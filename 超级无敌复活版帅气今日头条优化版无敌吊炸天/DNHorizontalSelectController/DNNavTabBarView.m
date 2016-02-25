@@ -36,8 +36,9 @@
 - (void)addView
 {
     _tabbarScrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width - 34, self.frame.size.height)];
- 
     _scrollCurrentMinX = 0;
+    
+    
     
     _scrollCurrentMaxX = self.frame.size.width - 34;
     
@@ -84,7 +85,7 @@
     _selectIndex = button.tag % 1000;
     _previouslySelect =  _previouslySelect%1000;
     
-    [self.delegate selectTitle:button.tag];
+    [self.delegate didSelectIndexAtNavTabbar:button.tag];
     
     
 }

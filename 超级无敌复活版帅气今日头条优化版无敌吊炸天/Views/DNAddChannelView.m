@@ -162,7 +162,7 @@
 
 
 -(void)deleteCellWith:(DNChannelCollectionViewCell *)cell{
-
+    
     // cell 隐藏
     cell.hidden = YES;
     // 获取当前的cell的index
@@ -224,7 +224,6 @@
             
             NSDictionary *dict = currentArrayPoint[i];
             
-            
             NSLog(@"%@",movingCell.titleLabel.text);
             
             CGPoint point = CGPointMake([dict[@"x"] integerValue], [dict[@"y"] integerValue]);
@@ -236,22 +235,6 @@
                 //
             } completion:^(BOOL finished) {
                 
-                // 当动画完成后array删除对应的cell
-//<<<<<<< HEAD
-//                NSMutableArray *mutabArr = [NSMutableArray arrayWithArray:_myChannelTitles];
-//                
-//                for (int i = 0; i < mutabArr.count; i++) {
-//                   
-//                    NSString *str = mutabArr[i];
-//                     NSLog(@"遍历str:%@",str);
-//                    if ([str isEqualToString:cell.titleLabel.text]) {
-//                        NSLog(@"删除-----》str:%@",str);
-//
-//                        [mutabArr removeObjectAtIndex:i];
-//                        
-//                        break;
-//=======
-//                
                 if (finished == YES) {
                     //
                     
