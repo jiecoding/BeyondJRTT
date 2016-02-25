@@ -202,7 +202,7 @@
             //找到对应的cell
             
             DNChannelCollectionViewCell *currentCell = (DNChannelCollectionViewCell *)[_myChannelcollectionView cellForItemAtIndexPath:currentIndex];
-            currentCell.userInteractionEnabled = NO;
+//            currentCell.userInteractionEnabled = NO;
             
             //        CGPoint viewpoint = [currentCell convertPoint:currentCell.center toView:self];
             
@@ -212,7 +212,7 @@
         }
 
         // 在选择后的cell进行位移.
-        for (NSInteger i = index.row; i < self.myChannelTitles.count - 1; i++) {
+        for (NSInteger i = index.row; i < self.myChannelTitles.count; i++) {
             
             NSUInteger movingInteger[] = {0, i + 1};
             NSIndexPath *movingIndex = [[NSIndexPath alloc] initWithIndexes:movingInteger length:2];
@@ -222,49 +222,64 @@
             
             NSDictionary *dict = currentArrayPoint[i];
             
+            
+            NSLog(@"%@",movingCell.titleLabel.text);
+            
             CGPoint point = CGPointMake([dict[@"x"] integerValue], [dict[@"y"] integerValue]);
             
-            [UIView animateWithDuration:0.5 animations:^{
-                movingCell.center = point;
+            
+            [UIView animateWithDuration:1 animations:^{
+                //
+                movingCell.layer.position = point;
+                //
             } completion:^(BOOL finished) {
                 
                 // 当动画完成后array删除对应的cell
-                NSMutableArray *mutabArr = [NSMutableArray arrayWithArray:_myChannelTitles];
                 
-                
-                for (int i = 0; i < mutabArr.count; i++) {
+                if (finished == YES) {
+                    //
                     
-                    NSString *str = mutabArr[i];
                     
-                    if ([str isEqualToString:cell.titleLabel.text]) {
-                        [mutabArr removeObjectAtIndex:i];
-                        break;
+                    if (i + 1 == self.myChannelTitles.count) {
+                        NSMutableArray *mutabArr = [NSMutableArray arrayWithArray:_myChannelTitles];
+                        
+                        
+                        for (int i = 0; i < mutabArr.count; i++) {
+                            
+                            NSString *str = mutabArr[i];
+                            
+                            if ([str isEqualToString:cell.titleLabel.text]) {
+                                [mutabArr removeObjectAtIndex:i];
+                                break;
+                            }
+                            
+                        }
+                        
+                        _myChannelTitles = [NSArray arrayWithArray:mutabArr];
+                        //                        cell.userInteractionEnabled = YES;
+                        
+                        
+                        [self reloadDataCollectionData];
                     }
                     
                 }
                 
-                _myChannelTitles = mutabArr;
-                
-                self.deleteCell(mutabArr);
-                // cell 显示
-                cell.hidden = NO;
-                // 数据刷新
-                [_myChannelcollectionView reloadData];
-                
             }];
-
+            
         }
     }
-
- }
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+    
 }
-*/
+
+
+-(void)reloadDataCollectionData {
+    
+    NSMutableArray *mutabArr = [NSMutableArray arrayWithArray:_myChannelTitles];
+    
+    self.deleteCell(mutabArr);
+    // cell 显示
+    // 数据刷新
+        [_myChannelcollectionView reloadData];
+}
 
 @end
