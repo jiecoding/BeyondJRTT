@@ -168,10 +168,10 @@
     // 获取当前的cell的index
      NSIndexPath *index = [_myChannelcollectionView indexPathForCell:cell];
     
+    NSLog(@"index.row :%d  self.myChannelTitles.count:%lu",(int)index.row,(unsigned long)self.myChannelTitles.count);
    // 判断是否是最后一个cell
-    if (index.row == self.myChannelTitles.count) {
+    if (index.row  + 1 == self.myChannelTitles.count) {
         NSMutableArray *mutabArr = [NSMutableArray arrayWithArray:_myChannelTitles];
-        
         
         for (int i = 0; i < mutabArr.count; i++) {
             
@@ -187,7 +187,9 @@
         _myChannelTitles = mutabArr;
         
         self.deleteCell(mutabArr);
+        
         cell.hidden = NO;
+        
         [_myChannelcollectionView reloadData];
 
     }else{
@@ -231,13 +233,15 @@
                 // 当动画完成后array删除对应的cell
                 NSMutableArray *mutabArr = [NSMutableArray arrayWithArray:_myChannelTitles];
                 
-                
                 for (int i = 0; i < mutabArr.count; i++) {
-                    
+                   
                     NSString *str = mutabArr[i];
-                    
+                     NSLog(@"遍历str:%@",str);
                     if ([str isEqualToString:cell.titleLabel.text]) {
+                        NSLog(@"删除-----》str:%@",str);
+
                         [mutabArr removeObjectAtIndex:i];
+                        
                         break;
                     }
                     
