@@ -16,12 +16,4 @@
 //添加父母层级
 - (void)addParentController:(UIViewController *)viewController;
 
-//导航栏的类似tabbar的View
-@property (strong,nonatomic)DNNavTabBarView *navTabbarView;
-
-//B类 控制器上添加 滚动的mainView
-@property (nonatomic, strong) UIScrollView *mainScrollView;
-
-
-
 @end
