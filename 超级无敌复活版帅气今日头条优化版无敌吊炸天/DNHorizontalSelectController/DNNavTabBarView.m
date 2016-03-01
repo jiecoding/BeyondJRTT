@@ -87,7 +87,9 @@
     _selectIndex = button.tag % 1000;
     _previouslySelect =  _previouslySelect%1000;
     
-    [self.delegate navTabBarView:self didSelectIndex:button.tag];
+//    [self.delegate navTabBarView:self didSelectIndex:button.tag];
+    
+    self.updateTabBarSelectBlock(button.tag);
     
     
 }

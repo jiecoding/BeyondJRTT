@@ -62,7 +62,18 @@
     [self subViewControllersManage];
     
      _navTabbarView.previouslySelect =round(_mainScrollView.contentOffset.x / self.view.frame.size.width);
-    
+    //如果不写这句话 下面block里就会出现 ：capturing 'self' strongly in this block is like 在ARC下不用__block 而是用 __weak 为了避免出现循环引用
+    /* 
+   为什么用循环引用没有报错，没报错 因为现在是arc啊 runloop里有autoreleasepool啊
+     */
+    __weak DNHorizontalSelectController *  weakSelf = self;
+     _navTabbarView.updateTabBarSelectBlock = ^(NSInteger index)
+    {
+        index = index%1000;
+        
+        weakSelf.mainScrollView.contentOffset = CGPointMake(self.view.frame.size.width*index, 0);
+    };
+        
 }
 
 - (void)addButtonClick:(UIButton *)button

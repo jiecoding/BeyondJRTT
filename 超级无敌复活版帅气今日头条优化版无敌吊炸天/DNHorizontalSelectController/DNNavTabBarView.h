@@ -17,6 +17,7 @@
 
 @end
 
+
 @interface DNNavTabBarView : UIView
 
 //@property(nonatomic) NSUInteger selectedIndex;
@@ -24,6 +25,12 @@
 //nullable : 标示当前属性可能为空,让外界使用时注意
 
 @property (nonatomic,weak) id <NavTabBarViewSelectDelegate>delegate;
+//block
+typedef void (^NavTabBarSelectBlock)(NSInteger index);
+/*
+ 我将block声明为copy的原因是在代码块里面我可能会使用一些本地变量。而block一开始是放在栈上的，只有copy后才会放到堆上。
+ */
+@property (nonatomic, copy) NavTabBarSelectBlock updateTabBarSelectBlock;
 
 //@property (nonatomic,strong)NSMutableArray *titles;
 
@@ -34,6 +41,7 @@
 - (void)addTabbarButtonAndButtonTitles:(NSArray *)titles controllClassNames:(NSArray *)controllClassNames;
 
 - (instancetype)initWithTitle:(nullable NSString *)title image:(nullable UIImage *)image tag:(NSInteger)tag;
+
 
 
 - (void)scrollviewSelectButton;
