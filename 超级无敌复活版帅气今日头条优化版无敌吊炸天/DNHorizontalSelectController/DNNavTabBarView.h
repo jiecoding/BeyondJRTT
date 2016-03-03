@@ -13,6 +13,7 @@
     代理是有必须实现和选择实现 block做不到这个功能 这也是tableview 必须用代理的原因
  */
 @required
+
 - (void)navTabBarView:(DNNavTabBarView *)navTabBarView didSelectIndex:(NSInteger )index;
 
 @end
@@ -40,9 +41,9 @@ typedef void (^NavTabBarSelectBlock)(NSInteger index);
 
 - (void)addTabbarButtonAndButtonTitles:(NSArray *)titles controllClassNames:(NSArray *)controllClassNames;
 
+//@property (nonatomic,strong) NSArray *titles;
+
 - (instancetype)initWithTitle:(nullable NSString *)title image:(nullable UIImage *)image tag:(NSInteger)tag;
-
-
 
 - (void)scrollviewSelectButton;
 @end

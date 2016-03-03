@@ -17,6 +17,7 @@
 		B9C9238C1C7410A2005D3FF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9C9238A1C7410A2005D3FF4 /* LaunchScreen.storyboard */; };
 		B9C923971C7410A2005D3FF4 /* _____________________Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C923961C7410A2005D3FF4 /* _____________________Tests.m */; };
 		B9C923A21C7410A2005D3FF4 /* _____________________UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C923A11C7410A2005D3FF4 /* _____________________UITests.m */; };
+		F51221D01C86C6A6003AE2C0 /* DNNavTabBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F51221CF1C86C6A6003AE2C0 /* DNNavTabBarModel.m */; };
 		F5A51EE21C7C3F4D00A19A5E /* DNBeiJingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EDD1C7C3F4D00A19A5E /* DNBeiJingViewController.m */; };
 		F5A51EE31C7C3F4D00A19A5E /* DNFashionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EDF1C7C3F4D00A19A5E /* DNFashionVC.m */; };
 		F5A51EE41C7C3F4D00A19A5E /* DNHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51EE11C7C3F4D00A19A5E /* DNHomeViewController.m */; };
@@ -65,6 +66,8 @@
 		B9C9239D1C7410A2005D3FF4 /* 超级无敌复活版帅气今日头条优化版无敌吊炸天UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C923A11C7410A2005D3FF4 /* _____________________UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____________________UITests.m"; sourceTree = "<group>"; };
 		B9C923A31C7410A2005D3FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F51221CE1C86C6A6003AE2C0 /* DNNavTabBarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNNavTabBarModel.h; sourceTree = "<group>"; };
+		F51221CF1C86C6A6003AE2C0 /* DNNavTabBarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNNavTabBarModel.m; sourceTree = "<group>"; };
 		F5A51EDC1C7C3F4D00A19A5E /* DNBeiJingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNBeiJingViewController.h; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNBeiJingViewController.h"; sourceTree = SOURCE_ROOT; };
 		F5A51EDD1C7C3F4D00A19A5E /* DNBeiJingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNBeiJingViewController.m; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNBeiJingViewController.m"; sourceTree = SOURCE_ROOT; };
 		F5A51EDE1C7C3F4D00A19A5E /* DNFashionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNFashionVC.h; path = "超级无敌复活版帅气今日头条优化版无敌吊炸天/DNFashionVC.h"; sourceTree = SOURCE_ROOT; };
@@ -166,8 +169,9 @@
 				B93A35211C743CBA00D68613 /* DNHorizontalSelectController */,
 				B9D213B31C7AEFEC007E404F /* ViewControllers */,
 				B98B50581C7BF1A200B54572 /* Views */,
-				B9C923851C7410A2005D3FF4 /* Main.storyboard */,
+				F51221CD1C86C655003AE2C0 /* Model */,
 				B9C923881C7410A2005D3FF4 /* Assets.xcassets */,
+				B9C923851C7410A2005D3FF4 /* Main.storyboard */,
 				B9C9238A1C7410A2005D3FF4 /* LaunchScreen.storyboard */,
 				B9C9238D1C7410A2005D3FF4 /* Info.plist */,
 				B9C9237C1C7410A2005D3FF4 /* Supporting Files */,
@@ -220,6 +224,15 @@
 				F5A51EE11C7C3F4D00A19A5E /* DNHomeViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F51221CD1C86C655003AE2C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F51221CE1C86C6A6003AE2C0 /* DNNavTabBarModel.h */,
+				F51221CF1C86C6A6003AE2C0 /* DNNavTabBarModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,6 +379,7 @@
 				F5A51EE41C7C3F4D00A19A5E /* DNHomeViewController.m in Sources */,
 				F5A51EF31C7C501700A19A5E /* DNChannelCollectionViewCell.m in Sources */,
 				F5A51EEF1C7C3F5500A19A5E /* DNSubscriptionViewController.m in Sources */,
+				F51221D01C86C6A6003AE2C0 /* DNNavTabBarModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

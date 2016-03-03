@@ -7,6 +7,7 @@
 //
 
 #import "DNNavTabBarView.h"
+#import "DNNavTabBarModel.h"
 
 
 @interface DNNavTabBarView ()
@@ -54,10 +55,38 @@
     
     
  }
+//
+//-(void)setTitles:(NSArray *)titles{
+//
+//    _titles = titles;
+//    
+//    int buttonX = 10;
+//        for (int i = 0; i<titles.count; i++) {
+//            DNNavTabBarModel *model = titles[i];
+//            UIButton *tabbarButton  = [UIButton buttonWithType:UIButtonTypeCustom];
+//            tabbarButton.frame = CGRectMake(buttonX, 0, 44, 44);
+//            [tabbarButton setTitle:model.titleName forState:UIControlStateNormal];
+//            tabbarButton.tag = i + 1000;
+//            [tabbarButton addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
+//    
+//            [_tabbarScrollview addSubview:tabbarButton];
+//            buttonX = buttonX+60;
+//        }
+//        _tabbarScrollview.contentSize = CGSizeMake(buttonX, self.frame.size.height);
+//
+//
+//}
 
-
+// 改
 - (void)addTabbarButtonAndButtonTitles:(NSArray *)titles controllClassNames:(NSArray *)controllClassNames
 {
+    
+    for (UIView *view in _tabbarScrollview.subviews) {
+//        if ([view.class isSubclassOfClass:NSClassFromString(@"UIButton")]) {
+            [view removeFromSuperview];
+//        }
+    }
+    
     int buttonX = 10;
     for (int i = 0; i<titles.count; i++) {
         UIButton *tabbarButton  = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -72,6 +101,8 @@
     _tabbarScrollview.contentSize = CGSizeMake(buttonX, self.frame.size.height);
 
 }
+
+
 
 - (void)clickButton:(UIButton *)button
 {
@@ -93,6 +124,7 @@
     
     
 }
+
 - (void)scrollviewSelectButton{
     
     UIButton *previouslyButton  = [self viewWithTag:_previouslySelect+1000];

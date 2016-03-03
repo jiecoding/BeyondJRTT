@@ -5,6 +5,10 @@
 //  Created by rongtong on 16/2/23.
 //  Copyright © 2016年 iosqun328218600. All rights reserved.
 //
+/*
+ @OC-初生牛犊心得
+ 1.我做cell的删除动画思路: 在点击cell的删除方法后告诉View进行位移动画(刚开始位移动画是view.center 直接跳转)
+ */
 
 #import "DNAddChannelView.h"
 #import "DNChannelCollectionViewCell.h"
@@ -190,7 +194,9 @@
         
         _myChannelTitles = mutabArr;
         
-        self.deleteCell(mutabArr);
+     
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"relodDateTitles" object:mutabArr];
+        
         cell.hidden = NO;
         [_myChannelcollectionView reloadData];
 
@@ -267,6 +273,7 @@
                         }
                         
                         _myChannelTitles = [NSArray arrayWithArray:mutabArr];
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"relodDateTitles" object:mutabArr];
     
                     }
            

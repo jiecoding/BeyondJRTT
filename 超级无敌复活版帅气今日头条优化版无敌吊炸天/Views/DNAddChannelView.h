@@ -12,7 +12,7 @@
 {
     int deleteShowAlphe;
 }
-@property (nonatomic,copy) void (^deleteCell)(NSMutableArray * arry);
+
 @property (nonatomic,strong)NSArray *myChannelTitles;
 
 - (void)show;

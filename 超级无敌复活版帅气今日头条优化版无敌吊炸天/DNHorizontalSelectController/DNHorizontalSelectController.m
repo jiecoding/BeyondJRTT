@@ -79,11 +79,7 @@
 - (void)addButtonClick:(UIButton *)button
 {
     DNAddChannelView *addChannelView = [[DNAddChannelView alloc] initWithFrame:self.view.frame];
-   addChannelView.myChannelTitles = _channelTitles;
-   addChannelView.deleteCell = ^(NSMutableArray *array){
-//        _navTabbarView.titles = array;
-#warning 这个地方让navtabbarview从新加载一遍数组..还有控制器
-    };
+    addChannelView.myChannelTitles = _channelTitles;
     [addChannelView show];
 }
 
@@ -110,10 +106,14 @@
          [_channelTitles addObject:titleStr];
      }
     
-//   _navTabbarView.titles = mutableTitles;
- 
+    [_navTabbarView addTabbarButtonAndButtonTitles:@[] controllClassNames:@[]];
+    
     [_navTabbarView addTabbarButtonAndButtonTitles:_channelTitles controllClassNames:_subViewControllers];
+    
+    
 }
+
+
 
 - (void)navTabBarView:(DNNavTabBarView *)navTabBarView didSelectIndex:(NSInteger )index
 {
@@ -133,15 +133,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
